@@ -3,7 +3,7 @@ import { useLocation, Link } from "react-router-dom";
 import { StyledHeader, HeaderProps } from "./Header.styles";
 
 function Header(props: HeaderProps) {
-  const links = ["/contactos", "/consultas", "/servicios", "/"];
+  const links = ["/registro", "/consultas", "/servicios", "/"];
   const router = useLocation();
   const { pathname } = router;
   const currentlinks = links.filter((link) => link !== pathname);

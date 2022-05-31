@@ -1,9 +1,7 @@
 import * as React from "react";
-import styled from "styled-components";
-import Nav from "../../components/Nav";
-import Row from "../../graphics/Row";
-import Column from "../../graphics/Column";
-
+import styled from  'styled-components';
+import Row from '../../graphics/Row';
+import Header from '../../components/header/Header'
 
 const Homepage = () => {
    
@@ -12,7 +10,7 @@ const Homepage = () => {
 		<>
 			
 				<StyledHome>
-				  <Nav color="#ffffff" padding="2em 0" />
+				  <Header color="#ffffff" padding="2em 0" />
           <Row vh center >
 					  <h1>Asistencia para una comunicación segura
 					    con proveedores y clientes
@@ -39,3 +37,4 @@ const StyledHome = styled.div`
   }
 `;
 //You can also disable this overlay by setting server.hmr.overlay to false in vite.config.js.
+//react-eighteen

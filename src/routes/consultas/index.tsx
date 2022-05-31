@@ -25,3 +25,4 @@ function Consultas() {
 }
 
 export default Consultas;
+

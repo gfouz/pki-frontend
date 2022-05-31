@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import Card from "./components/Card";
 const Homepage = lazy(() => import("./routes/homepage/index"));
-const Contact = lazy(() => import("./routes/contact/index"));
+const Login = lazy(() => import("./routes/registro/index"));
 const Consultas = lazy(() => import("./routes/consultas/index"));
 const Services = lazy(() => import("./routes/services/index"));
 import { HashRouter, Routes, Route } from "react-router-dom";
@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Suspense fallback={<Card />}>
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/contactos" element={<Contact />} />
+            <Route path="/registro" element={<Login />} />
             <Route path="/consultas" element={<Consultas />} />
             <Route path="/servicios" element={<Services />} />
           </Routes>
