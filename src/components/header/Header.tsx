@@ -13,7 +13,7 @@ function Header(props: HeaderProps) {
       <StyledHeader {...props}>
         <div className="nav">
           {currentlinks.map((link, index) => (
-            <div key={link + index}>
+            <div key={link} className="nav__list">
               <Link className="nav__item" to={`${link}`}>
                  {link === "/" ? "inicio" : link.slice(1)}
               </Link>

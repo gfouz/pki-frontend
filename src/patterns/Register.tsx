@@ -25,7 +25,7 @@ import {
   Checkbox,
   Heading,
   RadioGroup,
-  ChakraProvider,
+  ChakraProvider
 } from "@chakra-ui/react";
 
 export default function Resgister() {
@@ -56,7 +56,7 @@ export default function Resgister() {
                 {...OnlyNumberInputProps}
                 _placeholder={{ color: errors.id ? "red.400" : "gray.500" }}
                 placeholder={errors.id ? "Requerido 11 nros" : "Nro de ID"}
-                {...register("id", {required: true, maxLength:11, minLength: 11})}
+                {...register("id", { required: true, maxLength: 11, minLength: 11 })}
               />
               <Input
                 {...OnlyNumberInputProps}

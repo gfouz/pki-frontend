@@ -9,6 +9,7 @@ export interface HeaderProps {
   dark?: boolean;
   margin?: string;
   padding?: string;
+  column?: boolean;
 }
 
 export const StyledHeader = styled.div`
@@ -20,13 +21,16 @@ export const StyledHeader = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    .nav__item {
+    &__list {
+       padding: 1em 0;
+    }
+    &__item {
       color: ${(props: HeaderProps) => props.color};
       text-decoration: none;
       text-transform: uppercase;
       transition: all 0.4s;
     }
-    .nav__item:hover {
+    &__item:hover {
       color: #0099FF;
     }
   }
@@ -47,6 +51,7 @@ export const StyledHeader = styled.div`
         }
       }
     `}
+
   ${(props: HeaderProps) =>
     props.dark &&
     css`
@@ -55,4 +60,15 @@ export const StyledHeader = styled.div`
         color: #ffffff;
       }
     `}
+
+  ${(props: HeaderProps) =>
+    props.column &&
+    css`
+      .nav { 
+       height: 100%;
+       flex-direction: column;
+       justify-content: space-evenly;
+       align-items: flex-start;
+     }
+    `}  
 `;
