@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Header from "../../components/header/Header";
 import Footer from "../../components/Footer";
+import Test from '../../patterns/testing';
 
 
 function Services() {
@@ -10,6 +11,7 @@ function Services() {
      <StyledService>		
        <div className="request">
           <Header  padding="1em" color="#ffffff" bg="#555555"/>
+           <Test />
           <Footer simple bg="#444444" p="1em" c="#ffffff"> 
             <h3>
                Seguridad informática {new Date().getFullYear()}

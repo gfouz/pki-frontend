@@ -26,12 +26,13 @@ export const StyledHeader = styled.div`
     }
     &__item {
       color: ${(props: HeaderProps) => props.color};
+      font-weight: bolder;
       text-decoration: none;
       text-transform: uppercase;
       transition: all 0.4s;
     }
     &__item:hover {
-      color: #0099FF;
+      color: green;
     }
   }
   .hidden {

@@ -10,9 +10,8 @@ function Login() {
     <>
       <StyledResgister>
          <div className="main">
-            <Header  color="#252d40" bg="#F8F8FF"/>
-            <h1 className="main__title">pki-segurmatica</h1>
-            <h5 className="main__subtitle">Registrese en el formulario adjunto</h5>
+            <Header  color="#0091b8" bg="#eff9fb" padding="0.2em 0"/>
+            <img src="./images/key2.jpg" />
          </div>
          <div className="login">
              <Register />
@@ -26,21 +25,21 @@ const StyledResgister = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
     @media (max-width: 750px) {
       flex-direction: column;
     }
     .main {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       width: 100%;
-      min-height: 100vh;
-      background-image: url('./images/key.jpg');
-      background-position: right;
-      background-size: cover;
-      background-repeat: no-repeat;
+      background-color: #eff9fb;
+      
+      img {
+        max-width: 100%;
+        height: auto;
+      }
       &__title {
         text-align: center;
         color: #ffffff;
@@ -67,7 +66,7 @@ const StyledResgister = styled.div`
     }
 
     .login {
-      background-color: #F8F8FF;
+      background-color: #eff9fb;
       display: flex;
       justify-content: center;
       align-items: center;

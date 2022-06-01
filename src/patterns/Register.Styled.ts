@@ -10,6 +10,6 @@ export const StyledRegister = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border-radius: 15px;
-  box-shadow: 1px 1px 10px #000000;
+  border-radius: 8px;
+  box-shadow: 1px 1px 8px #39afd3;
 `;
