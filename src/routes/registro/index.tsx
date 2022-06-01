@@ -2,20 +2,64 @@ import * as React from "react";
 import styled from "styled-components";
 import Register from '../../patterns/Register';
 import Header from '../../components/header/Header';
+import {drawerStyle} from "./property";
+import {
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  useDisclosure,
+  DrawerCloseButton,
+} from '@chakra-ui/react'
 
 
 function Login() {
 
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const btnRef: React.LegacyRef<HTMLButtonElement> = React.useRef(null)
+
   return (
     <>
-      <StyledResgister>
-         <div className="main">
-            <Header  color="#0091b8" bg="#eff9fb" padding="0.2em 0"/>
-            <img src="./images/key2.jpg" />
+      <StyledResgister> 
+        <div className="main">
+          <div className="btn-container">
+          <Button
+            m="1em"
+            ref={btnRef}
+            variant='ghost'
+            onClick={onOpen}>
+            <strong style={{ color: "#222222" }}>{isOpen ? "cerrar" : "abrir"}</strong>
+          </Button>
+         </div> 
+            <h2 className="main__title">PKI-SEGURMATICA</h2>
+            <img className="main__image" src="./images/register.jpg" />
+            <h2 className="main__subtitle">Servicio de llave pública.</h2>
          </div>
          <div className="login">
              <Register />
          </div>
+
+
+         <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
+          <DrawerOverlay />
+          <DrawerContent style={{...drawerStyle}}>
+            <DrawerCloseButton style={{color:"#ffffff"}}/>
+            <DrawerHeader style={{ color: "#f1f1f1" }}>PKI-SEGURMATICA</DrawerHeader>
+            <DrawerBody>
+              <Header color="#f1f1f1" column />
+            </DrawerBody>
+            <DrawerFooter>
+              <Button variant='outline' mr={3} onClick={onClose}>
+                Cancel
+              </Button>
+              <Button colorScheme='purple'>Save</Button>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
       </StyledResgister>
     </>
   );
@@ -27,52 +71,58 @@ const StyledResgister = styled.div`
     justify-content: center;
     @media (max-width: 750px) {
       flex-direction: column;
+    }   
+    .btn-container {
+      margin: 0.3em;
     }
     .main {
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: center;
+  
       width: 100%;
-      background-color: #eff9fb;
+      background-color: #F5F5F5;
       
-      img {
+    .main__image {
         max-width: 100%;
         height: auto;
+
       }
       &__title {
+        position: absolute;
+        top: 140px;
+        left: 0;
+        right: 0;
         text-align: center;
-        color: #ffffff;
-        margin: 5em 0 0 0;
-        font-size: 1.5em;
+        color: #1f2956;
+        font-size: 1.3em;
         letter-spacing: 5px;
         font-weight: bolder;
         font-family: orangina;
         text-transform: uppercase;
-        text-shadow: 1px 1px 10px #000000;
         @media (min-width: 500px){
-          font-size:2.5em;
+          font-size:2em;
         }
       } 
       &__subtitle {
-        margin: 0 0 2em 0;
-        border-radius: 5px;
+        position: absolute;
         text-align: center;
-        color: #ffffff;
         font-weight: bolder;
-        text-transform: uppercase;
-        text-shadow: 1px 1px 10px #000000;
+        bottom: 10%;
+        left: 0;
+        right: 0;
+        
       }
     }
 
     .login {
-      background-color: #eff9fb;
+      background-color: #F5F5F5;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       width: 100%;
+      padding: 4.7em 0 0 0;
     } 
 `;
-
-

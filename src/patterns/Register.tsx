@@ -1,7 +1,7 @@
 import * as React from "react";
 import Option from "../components/Option";
 import { StyledRegister } from "./Register.Styled";
-import { IFormInput } from "./constants";
+import { IFormInput, registerRules } from "./constants";
 import { useForm, SubmitHandler } from "react-hook-form";
 import {
   ORGANISMOS,
@@ -25,175 +25,196 @@ import {
   Checkbox,
   Heading,
   RadioGroup,
-  ChakraProvider
+  Container,
 } from "@chakra-ui/react";
 
 export default function Resgister() {
+  const [color, setColor] = React.useState("#666666");
   const [radio, setRadio] = React.useState("juridica");
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<IFormInput>();
+
   const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
 
+  function eventHandler(evt: React.ChangeEvent<HTMLInputElement>) {
+    let { value } = evt.target;
+    let items = value.length;
+    if (items && items === 11) setColor("#9ACD32");
+    if (items && items > 11) setColor("red");
+    if (items && items < 11) setColor("#999999");
+  }
   return (
     <>
-      <ChakraProvider>
-        <StyledRegister>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <Center w="100%" p="1.5em">
-              <Heading as="h3" size="lg" color="#e53e3e">
-                Solicitud de Generación
-              </Heading>
-            </Center>
-            <Center w="100%" p="0.3em 0">
-              <Text color="#666666">Escriba sus datos correspondientes:</Text>
-            </Center>
-            <HStack spacing={2} p="0.7em">
+      <StyledRegister>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Center w="100%" p="1.5em">
+            <Heading as="h3" size="lg" color="#e53e3e">
+              Solicitud de Generación
+            </Heading>
+          </Center>
+          <Center w="100%" p="0.3em 0">
+            <Text color="#666666">Escriba sus datos correspondientes:</Text>
+          </Center>
+          <HStack spacing={2} p="0.7em">
+            <Container>
+              <label style={{ color: `${color}` }}>
+                <strong>ID</strong>
+              </label>
               <Input
-                m="0 0.7em"
                 {...OnlyNumberInputProps}
-                _placeholder={{ color: errors.id ? "red.400" : "gray.500" }}
-                placeholder={errors.id ? "Requerido 11 nros" : "Nro de ID"}
-                {...register("id", { required: true, maxLength: 11, minLength: 11 })}
+                _placeholder={{ color: errors.id ? "red.400" : "#666666" }}
+                placeholder={errors.id ? "Valido 11 dígitos" : " "}
+                {...register("id", {
+                  ...registerRules,
+                  onChange: (e) => eventHandler(e)
+                })}
               />
+            </Container>
+            <Container>
+              <label>Tomo</label>
               <Input
                 {...OnlyNumberInputProps}
                 _placeholder={{ color: errors.tomo ? "red.400" : "gray.500" }}
-                placeholder={errors.tomo ? "Olvido su Tomo!" : "Nro de Tomo"}
+                placeholder={errors.tomo ? "Olvido su Tomo!" : ""}
                 {...register("tomo", { required: true })}
+              />
+            </Container>
+            <Container>
+              <label>Folio</label>
+              <Input
+                {...OnlyNumberInputProps}
+                _placeholder={{ color: errors.folio ? "red.400" : "gray.500" }}
+                placeholder={errors.folio ? "Olvido su Folio!" : ""}
+                {...register("folio", { required: true })}
+              />
+            </Container>
+          </HStack>
+          <Box p="2em 0.7em" w="100%">
+            <Flex justifyContent="space-evenly">
+              <Input
+                {...EmailInputProps}
+                m="0 0.7em"
+                _placeholder={{ color: errors.email ? "red.400" : "gray.500" }}
+                placeholder={
+                  errors.email ? "Email requerido!" : "Correo Electrónico"
+                }
+                {...register("email", { required: true })}
               />
               <Input
                 m="0 0.7em"
                 {...OnlyNumberInputProps}
-                _placeholder={{ color: errors.folio ? "red.400" : "gray.500" }}
-                placeholder={errors.folio ? "Olvido su Folio!" : "Nro de Folio"}
-                {...register("folio", { required: true })}
+                _placeholder={{ color: errors.tel ? "red.400" : "gray.500" }}
+                placeholder={
+                  errors.tel ? "Teléfono requerido!" : "Nro de Teléfono"
+                }
+                {...register("tel", { required: true })}
               />
-            </HStack>
-            <Box p="2em 0.7em" w="100%">
-              <Flex justifyContent="space-evenly">
-                <Input
-                  {...EmailInputProps}
-                  m="0 0.7em"
-                  _placeholder={{ color: errors.email ? "red.400" : "gray.500" }}
-                  placeholder={
-                    errors.email ? "Email requerido!" : "Correo Electrónico"
-                  }
-                  {...register("email", { required: true })}
-                />
-                <Input
-                  m="0 0.7em"
-                  {...OnlyNumberInputProps}
-                  _placeholder={{ color: errors.tel ? "red.400" : "gray.500" }}
-                  placeholder={
-                    errors.tel ? "Teléfono requerido!" : "Nro de Teléfono"
-                  }
-                  {...register("tel", { required: true })}
-                />
+            </Flex>
+          </Box>
+          <RadioGroup onChange={setRadio} value={radio} w="100%">
+            <Box p="0 0.7em" w="100%">
+              <Flex justifyContent="flex-start">
+                <Radio
+                  m="0 1em"
+                  value="juridica"
+                  isChecked={radio == "juridica" ? true : false}
+                >
+                  Persona jurídica
+                </Radio>
+                <Radio
+                  m="0 1em"
+                  value="natural"
+                  isChecked={radio == "natural" ? true : false}
+                >
+                  Persona Natural
+                </Radio>
               </Flex>
             </Box>
-            <RadioGroup onChange={setRadio} value={radio} w="100%">
-              <Box p="0 0.7em" w="100%">
-                <Flex justifyContent="flex-start">
-                  <Radio
-                    m="0 1em"
-                    value="juridica"
-                    isChecked={radio == "juridica" ? true : false}
-                  >
-                    Persona jurídica
-                  </Radio>
-                  <Radio
-                    m="0 1em"
-                    value="natural"
-                    isChecked={radio == "natural" ? true : false}
-                  >
-                    Persona Natural
-                  </Radio>
-                </Flex>
-              </Box>
-            </RadioGroup>
-            {radio == "juridica" && (
-              <>
-                <Box p="2em 0.7em" w="100%">
-                  <Flex justifyContent="space-evenly">
-                    <Select
-                      m="0 0.7em"
-                      placeholder="Organismos"
-                      {...register("organismos")} //organismos
-                    >
-                      <Option data={ORGANISMOS} />
-                    </Select>
-                    <Select
-                      m="0 0.7em"
-                      placeholder="Empresa o Institución"
-                      {...register("empresas")} //empresas
-                    >
-                      <Option data={EMPRESAS} />
-                    </Select>
-                  </Flex>
-                </Box>
-                <Box p="2em 0.7em" w="100%">
-                  <Flex justifyContent="space-evenly">
-                    <Input
-                      m="0 0.7em"
-                      {...TextInputProps}
-                      _placeholder={{
-                        color: errors.cargo ? "red.400" : "gray.500",
-                      }}
-                      placeholder={
-                        errors.cargo ? "Olvido su Cargo!" : "Escribe tu cargo"
-                      }
-                      {...register("cargo", { required: true })}
-                    />
-                    <Input
-                      m="0 0.7em"
-                      {...TextInputProps}
-                      _placeholder={{
-                        color: errors.representante ? "red.400" : "gray.500",
-                      }}
-                      placeholder={
-                        errors.representante ? "Representante requerido!" : "Representante"
-                      }
-                      {...register("representante", { required: true })}
-                    />
-                  </Flex>
-                </Box>
-              </>
-            )}
-            {radio == "natural" && (
+          </RadioGroup>
+          {radio == "juridica" && (
+            <>
               <Box p="2em 0.7em" w="100%">
                 <Flex justifyContent="space-evenly">
                   <Select
-                    placeholder="Entidad relacionada"
-                    {...register("entidades")} //entidades
+                    m="0 0.7em"
+                    placeholder="Organismos"
+                    {...register("organismos")} //organismos
                   >
-                    <Option data={ENTIDADES} />
+                    <Option data={ORGANISMOS} />
+                  </Select>
+                  <Select
+                    m="0 0.7em"
+                    placeholder="Empresa o Institución"
+                    {...register("empresas")} //empresas
+                  >
+                    <Option data={EMPRESAS} />
                   </Select>
                 </Flex>
               </Box>
-            )}
-            <Box p="0 1em" w="100%">
-              <Flex justifyContent="flex-start">
-                <Checkbox m="0 0.7em">
-                  Acepto los terminos y condiciones.
-                </Checkbox>
-              </Flex>
-            </Box>
+              <Box p="2em 0.7em" w="100%">
+                <Flex justifyContent="space-evenly">
+                  <Input
+                    m="0 0.7em"
+                    {...TextInputProps}
+                    _placeholder={{
+                      color: errors.cargo ? "red.400" : "gray.500",
+                    }}
+                    placeholder={
+                      errors.cargo ? "Olvido su Cargo!" : "Escribe tu cargo"
+                    }
+                    {...register("cargo", { required: true })}
+                  />
+                  <Input
+                    m="0 0.7em"
+                    {...TextInputProps}
+                    _placeholder={{
+                      color: errors.representante ? "red.400" : "gray.500",
+                    }}
+                    placeholder={
+                      errors.representante
+                        ? "Representante requerido!"
+                        : "Representante"
+                    }
+                    {...register("representante", { required: true })}
+                  />
+                </Flex>
+              </Box>
+            </>
+          )}
+          {radio == "natural" && (
             <Box p="2em 0.7em" w="100%">
               <Flex justifyContent="space-evenly">
-                <Button colorScheme="blue" variant="solid" type="submit">
-                  Continuar
-                </Button>
-                <Button colorScheme="red" variant="solid">
-                  Cancelar
-                </Button>
+                <Select
+                  placeholder="Entidad relacionada"
+                  {...register("entidades")} //entidades
+                >
+                  <Option data={ENTIDADES} />
+                </Select>
               </Flex>
             </Box>
-          </form>
-        </StyledRegister>
-      </ChakraProvider>
+          )}
+          <Box p="0 1em" w="100%">
+            <Flex justifyContent="flex-start">
+              <Checkbox m="0 0.7em">
+                Acepto los terminos y condiciones.
+              </Checkbox>
+            </Flex>
+          </Box>
+          <Box p="2em 0.7em" w="100%">
+            <Flex justifyContent="space-evenly">
+              <Button colorScheme="facebook" variant="solid" type="submit">
+                Continuar
+              </Button>
+              <Button colorScheme="red" variant="solid">
+                Cancelar
+              </Button>
+            </Flex>
+          </Box>
+        </form>
+      </StyledRegister>
     </>
   );
 }

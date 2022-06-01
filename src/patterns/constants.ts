@@ -48,6 +48,11 @@ type TextInputProps = {
   type: string;
   variant: string;
 };
+type InputLableProps = {
+  size: string;
+  type: string;
+  variant: string;
+}
 
 export const OnlyNumberInputProps: InputProps = {
   size: "sm",
@@ -65,3 +70,21 @@ export const TextInputProps: TextInputProps = {
   type: "text",
   variant: "flushed"
 };
+export const InputLabelProps: InputLableProps = {
+  size: "sm",
+  type: "text",
+  variant: "flushed"
+};
+
+interface RegisterRulesProps {
+ required: boolean;
+ maxLength: number;
+ minLength: number;
+}
+
+export const registerRules: RegisterRulesProps = {
+  required: true,
+  maxLength: 11,
+  minLength: 11
+}
+

@@ -6,10 +6,13 @@ export const StyledRegister = styled.div`
   max-width: 450px;
   min-width: 320px;
   margin: 5px;
-  max-height: 650px;
+  max-height: 680px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   border-radius: 8px;
-  box-shadow: 1px 1px 8px #39afd3;
+  box-shadow: 1px 1px 8px #20285b;
+  .lable {
+    color: green;
+  }
 `;

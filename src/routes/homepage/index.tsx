@@ -1,69 +1,66 @@
 import * as React from "react";
 import styled from 'styled-components';
-import Header from '../../components/header/Header'
+import Header from '../../components/header/Header';
+import {asideStyle} from './constant';
+
 import {
-	Button,
-	Drawer,
-	DrawerBody,
-	DrawerFooter,
-	DrawerHeader,
-	DrawerOverlay,
-	DrawerContent,
-	useDisclosure,
-	DrawerCloseButton,
-	ChakraProvider
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  useDisclosure,
+  DrawerCloseButton,
 } from '@chakra-ui/react'
 
 export default function Homepage() {
 
-	const { isOpen, onOpen, onClose } = useDisclosure()
-	const btnRef: React.LegacyRef<HTMLButtonElement> = React.useRef(null)
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const btnRef: React.LegacyRef<HTMLButtonElement> = React.useRef(null)
 
-	return (
-		<>
-			<ChakraProvider>
-       <StyledMain>
+  return (
+    <>
+      <StyledMain>
         <div className="l-main">
-         <Button 
+          <Button
             m="1em"
-            ref={btnRef} 
+            ref={btnRef}
             variant='ghost'
             onClick={onOpen}>
-            <strong style={{color:"#ffffff"}}>{isOpen ? "cerrar" : "abrir"}</strong>
-        </Button>
-        <article className="l-main__title">
-          <div className="textstack">
-            <h1 className="textstack__title">PKI-SEGURMATICA</h1>
-            <h3 className="textstack__subtitle">Servicio de llave publica</h3>
-          </div>
-        </article> 
+            <strong style={{ color: "#ffffff" }}>{isOpen ? "cerrar" : "abrir"}</strong>
+          </Button>
+          <article className="l-main__title">
+            <div className="textstack">
+              <h1 className="textstack__title">PKI-SEGURMATICA</h1>
+              <h3 className="textstack__subtitle">Servicio de llave publica</h3>
+            </div>
+          </article>
         </div>
-				<Drawer
-					isOpen={isOpen}
-					placement='right'
-					onClose={onClose}
-				>
-					<DrawerOverlay />
-					<DrawerContent>
-						<DrawerCloseButton />
-						<DrawerHeader style={{color:"#DC143C"}}>PKI-SEGURMATICA</DrawerHeader>
-
-						<DrawerBody>
-							<Header color="#800080" column/>
-						</DrawerBody>
-                
-						<DrawerFooter>
-							<Button variant='outline' mr={3} onClick={onClose}>
-								Cancel
-							</Button>
-							<Button colorScheme='purple'>Save</Button>
-						</DrawerFooter>
-					</DrawerContent>
-				</Drawer>
-       </StyledMain> 
-			</ChakraProvider>
-		</>
-	)
+        <Drawer
+          isOpen={isOpen}
+          placement='right'
+          onClose={onClose}
+        >
+          <DrawerOverlay />
+          <DrawerContent style={{...asideStyle}}>
+            <DrawerCloseButton />
+            <DrawerHeader style={{ color: "#222222" }}>PKI-SEGURMATICA</DrawerHeader>
+            <DrawerBody>
+              <Header color="#800080" column />
+            </DrawerBody>
+            <DrawerFooter>
+              <Button variant='outline' mr={3} onClick={onClose}>
+                Cancel
+              </Button>
+              <Button colorScheme='purple'>Save</Button>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+      </StyledMain>
+    </>
+  )
 }
 
 const StyledMain = styled.div`
