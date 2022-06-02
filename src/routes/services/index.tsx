@@ -1,7 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
-import { drawerBackground } from './constants'
+import { sidebarContent, toggleButton } from './constants'
 import Header from '../../components/header/Header';
+import Glider from '../../components/slider/Slider'
 import {
   Button,
   Drawer,
@@ -29,13 +30,20 @@ function Services() {
             m="1em"
             ref={btnRef}
             variant="ghost"
-            onClick={onOpen}>
-            <strong style={{ color: "crimson" }}>{isOpen ? "cerrar" : "abrir"}</strong>
+            onClick={onOpen}
+            className="toggle-button"
+            >
+            <strong style={{ ...toggleButton }}>{isOpen ? "CERRAR" : "ABRIR"}</strong>
           </Button>
+          <Heading color="#e1cf62" m="2em">Servicios</Heading>
+          <Glider />
+
+
+        {/*THIS IS THE LATERAL MENU AND IS ABSOLUTE TO THE BODY*/}
 
         <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
           <DrawerOverlay />
-          <DrawerContent style={{...drawerBackground}}>
+          <DrawerContent style={{...sidebarContent}}>
             <DrawerCloseButton style={{color:"crimson"}}/>
             <DrawerHeader style={{ color: "crimson" }}>PKI-SERVICIOS</DrawerHeader>
             <DrawerBody>
@@ -57,7 +65,17 @@ function Services() {
 export default Services;
 
 const StyledService = styled.div`
+position: relative;
+background-color: #222222;
 width: 100%;
-
-
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+.toggle-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
 `;

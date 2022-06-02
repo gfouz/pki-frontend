@@ -1,7 +1,6 @@
 import * as React from "react";
 import styled from 'styled-components';
 import Header from '../../components/header/Header';
-import Carousel from '../../components/Slider'
 import {asideStyle} from './constant';
 
 
@@ -43,7 +42,7 @@ export default function Homepage() {
           <DrawerOverlay />
           <DrawerContent style={{...asideStyle}}>
             <DrawerCloseButton />
-            <DrawerHeader style={{ color: "#222222" }}>PKI-SEGURMATICA</DrawerHeader>
+            <DrawerHeader style={{ color: "#222222" }}>PKI-INICIO</DrawerHeader>
             <DrawerBody>
               <Header color="#800080" column />
             </DrawerBody>

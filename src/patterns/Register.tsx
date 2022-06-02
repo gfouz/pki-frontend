@@ -51,7 +51,7 @@ export default function Resgister() {
       <StyledRegister>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Center w="100%" p="1.5em">
-            <Heading as="h3" size="lg" color="#CC3333">
+            <Heading as="h3" size="lg" color="#e53e3e">
               Solicitud de Generación
             </Heading>
           </Center>

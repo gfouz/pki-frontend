@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import Register from '../../patterns/Register';
 import Header from '../../components/header/Header';
-import {sidebarStyles} from "./constants";
+import { lateralMenu, toggleButton} from "./constants";
 import {
   Button,
   Drawer,
@@ -32,24 +32,27 @@ function Login() {
             ref={btnRef}
             variant="ghost"
             onClick={onOpen}
-            className="login__open-btn">
-            <strong style={{ color: "#385898" }}>{isOpen ? "cerrar" : "abrir"}</strong>
+            className="toggle-button">
+            <strong style={{ ...toggleButton }}>{isOpen ? "cerrar" : "abrir"}</strong>
            </Button>
         </header>
         <section className="login">
-         <div className="login__container">
-          <img className="login__image" src="./images/login2.jpg" />
+         <div className="login__divider">
+          <img className="login__image" src="./images/login5.jpg" />
          </div>
-         <div className="login__container"> 
+         <div className="login__divider"> 
           <Register />
          </div> 
       </section> 
       <footer>
-        <Heading  size='sm'>Sergurmática &copy; {new Date().getFullYear()}</Heading>
+        <Heading  size='sm'>Segurmática &copy; {new Date().getFullYear()}</Heading>
       </footer>
+
+        {/* This is the sliding sidebar absolute related to the body*/} 
+        
          <Drawer isOpen={isOpen} placement='left' onClose={onClose}>
           <DrawerOverlay />
-          <DrawerContent style={{...sidebarStyles}}>
+          <DrawerContent style={{...lateralMenu}}>
             <DrawerCloseButton style={{color:"#222222"}}/>
             <DrawerHeader style={{ color: "#CC3333" }}>PKI-REGISTROS</DrawerHeader>
             <DrawerBody>
@@ -70,7 +73,10 @@ function Login() {
 export default Login;
 const StyledResgister = styled.div`
     width: 100%;
-    background-color: #eff9fb;
+    background-color: #ffffff;
+    header {
+      background-color: #333333;
+    }
     .login { 
     position: relative;
     display: flex;
@@ -79,7 +85,7 @@ const StyledResgister = styled.div`
       align-items: center;
     }
     }
-    .login__container {
+    .login__divider {
       width: 100%;
       display: flex;
       justify-content: center;
@@ -90,9 +96,9 @@ const StyledResgister = styled.div`
       object-fit: fill;
     }
     footer {
-      color: #385898;
-      padding: 2em 0;
+      color: #e1cf62;
+      padding: 1.5em 0;
       text-align: center;
-      background-color: #eff9fb;
+      background-color: #333333;
     }
 `;
