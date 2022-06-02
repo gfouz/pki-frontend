@@ -58,17 +58,6 @@ export default Services;
 
 const StyledService = styled.div`
 width: 100%;
-min-height: 100vh;
-h1{
-  padding: 0 0.2em;
-}
-.request {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f1f1f1;
-}
+
+
 `;

@@ -64,7 +64,7 @@ const StyledMain = styled.div`
   height: 100%;
   .main {   
   min-height: 100vh;  
-  background-image: url(./images/home5.jpg);
+  background-image: url(./images/home.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
