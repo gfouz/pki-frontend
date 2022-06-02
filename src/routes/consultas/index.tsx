@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from 'styled-components';
 import Header from '../../components/header/Header'
+import Carousel from '../../components/Slider'
 import {
   Button,
   Drawer,
@@ -21,7 +22,7 @@ export default function Request() {
   return (
     <>
       <StyledMain>
-        <div className="l-main">
+        <div className="main">
           <Button
             m="1em"
             ref={btnRef}
@@ -29,12 +30,7 @@ export default function Request() {
             onClick={onOpen}>
             <strong style={{ color: "#ff0000" }}>{isOpen ? "cerrar" : "abrir"}</strong>
           </Button>
-          <article className="l-main__title">
-            <div className="textstack">
-              <h1 className="textstack__title">Consultas</h1>
-              <h3 className="textstack__subtitle">Servicio de Consultas</h3>
-            </div>
-          </article>
+          <Carousel />
         </div>
         <Drawer
           isOpen={isOpen}
@@ -44,7 +40,7 @@ export default function Request() {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader style={{ color: "#DC143C" }}>PKI-SEGURMATICA</DrawerHeader>
+            <DrawerHeader style={{ color: "#DC143C" }}>PKI-CONSULTAS</DrawerHeader>
             <DrawerBody>
               <Header color="#800080" column />
             </DrawerBody>
@@ -63,11 +59,11 @@ export default function Request() {
 
 const StyledMain = styled.div`
   height: 100%;
-  .l-main {   
+  .main {   
   min-height: 100vh;  
   
 }
-  .l-main__title { 
+  .main__title { 
   min-height: calc(100vh - 72px);  
   display: flex;
   flex-direction: column;

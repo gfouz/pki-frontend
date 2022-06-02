@@ -1,7 +1,7 @@
 import * as React from "react";
 import Option from "../components/Option";
 import { StyledRegister } from "./Register.Styled";
-import { IFormInput, registerRules } from "./constants";
+import { IFormInput, IdRegisterRules } from "./constants";
 import { useForm, SubmitHandler } from "react-hook-form";
 import {
   ORGANISMOS,
@@ -42,16 +42,16 @@ export default function Resgister() {
   function eventHandler(evt: React.ChangeEvent<HTMLInputElement>) {
     let { value } = evt.target;
     let items = value.length;
-    if (items && items === 11) setColor("#9ACD32");
-    if (items && items > 11) setColor("red");
-    if (items && items < 11) setColor("#999999");
+    if (items && items === 11) setColor("#66CC00");
+    if (items && items > 11) setColor("#ff0000");
+    if (items && items < 11) setColor("#CCCCCC");
   }
   return (
     <>
       <StyledRegister>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Center w="100%" p="1.5em">
-            <Heading as="h3" size="lg" color="#e53e3e">
+            <Heading as="h3" size="lg" color="#CC3333">
               Solicitud de Generación
             </Heading>
           </Center>
@@ -68,7 +68,7 @@ export default function Resgister() {
                 _placeholder={{ color: errors.id ? "red.400" : "#666666" }}
                 placeholder={errors.id ? "Valido 11 dígitos" : " "}
                 {...register("id", {
-                  ...registerRules,
+                  ...IdRegisterRules,
                   onChange: (e) => eventHandler(e)
                 })}
               />
@@ -198,7 +198,7 @@ export default function Resgister() {
           )}
           <Box p="0 1em" w="100%">
             <Flex justifyContent="flex-start">
-              <Checkbox m="0 0.7em">
+              <Checkbox m="0 0.7em" colorScheme='red'>
                 Acepto los terminos y condiciones.
               </Checkbox>
             </Flex>

@@ -1,33 +1,41 @@
-import * as React from "react";
-import styled from "styled-components";
-import Row from "../graphics/Row";
-import Headline from "../components/Headline";
-import SpyGlass from "../icons/SpyGlass";
+import styled from 'styled-components';
+import { 
+  Box,
+  Stack,
+  Heading,
+  Skeleton, 
+  SkeletonCircle, 
+  SkeletonText 
+  } from '@chakra-ui/react';
 
-const Card = () => {
+export default function Card() {
+  
   return (
-    <StyledCard>
-      <div className="card">
-        <Row >
-          <Headline color="#ffffff"  text="Seguridad" />
-          <SpyGlass size="2em" color="#ffffff" />
-          <Headline color="#ffffff" text="Loading..." />
-       </Row>
-      </div>
-    </StyledCard>
-  );
-};
-export default Card;
-const StyledCard = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  place-items: center;
-  .card {
-    padding: 1em;
-    text-align: center;
-    background-color: #333333;
-    border-radius: 8px;
+   <StyledSkeleton> 
+    <Box w="100%">
+      <Skeleton  height='100px' startColor='grey' />
+    </Box>
+      <Heading 
+        size='2xl' 
+        color='#66CC00'
+      >
+      LOADING...
+      </Heading>
+    <Box w="100%">
+      <Skeleton  height='100px' startColor='grey' />
+    </Box>
+   </StyledSkeleton>  
+  )
+}
 
-  }
+const StyledSkeleton = styled.div`
+ width: 100%;
+ padding: 4em;
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
 `;
+
+//how to add a new declaration (.d.ts) file containing `declare module 'react-slick

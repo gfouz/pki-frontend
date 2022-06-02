@@ -2,17 +2,13 @@ import styled from "styled-components";
 
 
 export const StyledRegister = styled.div`
-  background-color: #ffffff;
-  max-width: 450px;
-  min-width: 320px;
-  margin: 5px;
-  max-height: 680px;
+  background-color: #eff9fb;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  border-radius: 8px;
-  box-shadow: 1px 1px 8px #20285b;
-  .lable {
-    color: green;
+  align-items: center;
+  border-radius: 5px;
+  @media (min-width: 800px){
+    padding: 0.5em 0;
   }
 `;

@@ -1,7 +1,9 @@
 import * as React from "react";
 import styled from 'styled-components';
 import Header from '../../components/header/Header';
+import Carousel from '../../components/Slider'
 import {asideStyle} from './constant';
+
 
 import {
   Button,
@@ -23,7 +25,8 @@ export default function Homepage() {
   return (
     <>
       <StyledMain>
-        <div className="l-main">
+
+        <div className="main">
           <Button
             m="1em"
             ref={btnRef}
@@ -31,16 +34,10 @@ export default function Homepage() {
             onClick={onOpen}>
             <strong style={{ color: "#ffffff" }}>{isOpen ? "cerrar" : "abrir"}</strong>
           </Button>
-          <article className="l-main__title">
-            <div className="textstack">
-              <h1 className="textstack__title">PKI-SEGURMATICA</h1>
-              <h3 className="textstack__subtitle">Servicio de llave publica</h3>
-            </div>
-          </article>
         </div>
         <Drawer
           isOpen={isOpen}
-          placement='right'
+          placement='left'
           onClose={onClose}
         >
           <DrawerOverlay />
@@ -65,14 +62,14 @@ export default function Homepage() {
 
 const StyledMain = styled.div`
   height: 100%;
-  .l-main {   
+  .main {   
   min-height: 100vh;  
-  background-image: url(./images/home.jpg);
+  background-image: url(./images/home5.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
 }
-  .l-main__title { 
+  .main__title { 
   min-height: calc(100vh - 72px);  
   display: flex;
   flex-direction: column;

@@ -1,4 +1,4 @@
-type drawerStyleProps = {
+type DrawerBackgroundProps = {
 backgroundImage: string;
 backgroundPosition: string;
 backgroundRepeat: string;
@@ -6,10 +6,10 @@ backgroundAttachment: string;
 backgroundSize: string;
 }
 
-export const drawerStyle: drawerStyleProps = {
-backgroundImage: `url('./images/home.jpg')`,
+export const drawerBackground: DrawerBackgroundProps = {
+backgroundImage: `url('./images/aside.jpg')`,
 backgroundPosition: "center center",
 backgroundRepeat: "no-repeat",
 backgroundAttachment: "fixed",
-backgroundSize: "cover"
+backgroundSize: "200px"
 }

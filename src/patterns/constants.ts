@@ -76,13 +76,13 @@ export const InputLabelProps: InputLableProps = {
   variant: "flushed"
 };
 
-interface RegisterRulesProps {
+interface IdRegisterRulesProps {
  required: boolean;
  maxLength: number;
  minLength: number;
 }
 
-export const registerRules: RegisterRulesProps = {
+export const IdRegisterRules: IdRegisterRulesProps = {
   required: true,
   maxLength: 11,
   minLength: 11

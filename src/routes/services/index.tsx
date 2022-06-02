@@ -1,23 +1,54 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import Header from "../../components/header/Header";
-import Footer from "../../components/Footer";
-import Test from '../../patterns/testing';
+import * as React from "react";
+import styled from "styled-components";
+import { drawerBackground } from './constants'
+import Header from '../../components/header/Header';
+import {
+  Button,
+  Drawer,
+  Heading,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  useDisclosure,
+  DrawerCloseButton,
+} from '@chakra-ui/react'
 
 
 function Services() {
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef: React.LegacyRef<HTMLButtonElement> = React.useRef(null);
+
+
 	return(
     <>
      <StyledService>		
-       <div className="request">
-          <Header  padding="1em" color="#ffffff" bg="#555555"/>
-           <Test />
-          <Footer simple bg="#444444" p="1em" c="#ffffff"> 
-            <h3>
-               Seguridad informática {new Date().getFullYear()}
-            </h3>
-          </Footer>
-       </div>
+          <Button
+            m="1em"
+            ref={btnRef}
+            variant="ghost"
+            onClick={onOpen}>
+            <strong style={{ color: "crimson" }}>{isOpen ? "cerrar" : "abrir"}</strong>
+          </Button>
+
+        <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
+          <DrawerOverlay />
+          <DrawerContent style={{...drawerBackground}}>
+            <DrawerCloseButton style={{color:"crimson"}}/>
+            <DrawerHeader style={{ color: "crimson" }}>PKI-SERVICIOS</DrawerHeader>
+            <DrawerBody>
+              <Header color="#805ad5" column />
+            </DrawerBody>
+            <DrawerFooter>
+              <Button variant='outline' mr={3} onClick={onClose}>
+                Cancel
+              </Button>
+              <Button colorScheme='purple'>Save</Button>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
      </StyledService> 
     </>  
     );

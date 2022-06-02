@@ -1,13 +1,14 @@
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import { ChakraProvider } from '@chakra-ui/react'
-import "./index.css";
 import Card from "./components/Card";
 const Homepage = lazy(() => import("./routes/homepage/index"));
 const Login = lazy(() => import("./routes/registro/index"));
 const Request = lazy(() => import("./routes/consultas/index"));
 const Services = lazy(() => import("./routes/services/index"));
 import { HashRouter, Routes, Route } from "react-router-dom";
+import "./index.css";
+
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

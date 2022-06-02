@@ -2,10 +2,11 @@ import * as React from "react";
 import styled from "styled-components";
 import Register from '../../patterns/Register';
 import Header from '../../components/header/Header';
-import {drawerStyle} from "./property";
+import {sidebarStyles} from "./constants";
 import {
   Button,
   Drawer,
+  Heading,
   DrawerBody,
   DrawerFooter,
   DrawerHeader,
@@ -25,32 +26,34 @@ function Login() {
   return (
     <>
       <StyledResgister> 
-        <div className="main">
-          <div className="btn-container">
-          <Button
+        <header>
+            <Button
             m="1em"
             ref={btnRef}
-            variant='ghost'
-            onClick={onOpen}>
-            <strong style={{ color: "#222222" }}>{isOpen ? "cerrar" : "abrir"}</strong>
-          </Button>
+            variant="ghost"
+            onClick={onOpen}
+            className="login__open-btn">
+            <strong style={{ color: "#385898" }}>{isOpen ? "cerrar" : "abrir"}</strong>
+           </Button>
+        </header>
+        <section className="login">
+         <div className="login__container">
+          <img className="login__image" src="./images/login2.jpg" />
+         </div>
+         <div className="login__container"> 
+          <Register />
          </div> 
-            <h2 className="main__title">PKI-SEGURMATICA</h2>
-            <img className="main__image" src="./images/register.jpg" />
-            <h2 className="main__subtitle">Servicio de llave pública.</h2>
-         </div>
-         <div className="login">
-             <Register />
-         </div>
-
-
-         <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
+      </section> 
+      <footer>
+        <Heading  size='sm'>Sergurmática &copy; {new Date().getFullYear()}</Heading>
+      </footer>
+         <Drawer isOpen={isOpen} placement='left' onClose={onClose}>
           <DrawerOverlay />
-          <DrawerContent style={{...drawerStyle}}>
-            <DrawerCloseButton style={{color:"#ffffff"}}/>
-            <DrawerHeader style={{ color: "#f1f1f1" }}>PKI-SEGURMATICA</DrawerHeader>
+          <DrawerContent style={{...sidebarStyles}}>
+            <DrawerCloseButton style={{color:"#222222"}}/>
+            <DrawerHeader style={{ color: "#CC3333" }}>PKI-REGISTROS</DrawerHeader>
             <DrawerBody>
-              <Header color="#f1f1f1" column />
+              <Header color="#800080" column />
             </DrawerBody>
             <DrawerFooter>
               <Button variant='outline' mr={3} onClick={onClose}>
@@ -67,62 +70,29 @@ function Login() {
 export default Login;
 const StyledResgister = styled.div`
     width: 100%;
+    background-color: #eff9fb;
+    .login { 
+    position: relative;
     display: flex;
-    justify-content: center;
-    @media (max-width: 750px) {
+    @media (max-width: 800px){
       flex-direction: column;
-    }   
-    .btn-container {
-      margin: 0.3em;
+      align-items: center;
     }
-    .main {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-  
+    }
+    .login__container {
       width: 100%;
-      background-color: #F5F5F5;
-      
-    .main__image {
-        max-width: 100%;
-        height: auto;
-
-      }
-      &__title {
-        position: absolute;
-        top: 140px;
-        left: 0;
-        right: 0;
-        text-align: center;
-        color: #1f2956;
-        font-size: 1.3em;
-        letter-spacing: 5px;
-        font-weight: bolder;
-        font-family: orangina;
-        text-transform: uppercase;
-        @media (min-width: 500px){
-          font-size:2em;
-        }
-      } 
-      &__subtitle {
-        position: absolute;
-        text-align: center;
-        font-weight: bolder;
-        bottom: 10%;
-        left: 0;
-        right: 0;
-        
-      }
-    }
-
-    .login {
-      background-color: #F5F5F5;
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      width: 100%;
-      padding: 4.7em 0 0 0;
-    } 
+    }
+    .login__image {
+      max-width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+    footer {
+      color: #385898;
+      padding: 2em 0;
+      text-align: center;
+      background-color: #eff9fb;
+    }
 `;
