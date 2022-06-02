@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from 'styled-components';
 import Header from '../../components/header/Header'
+import Renewal from '../../patterns/Renewal'
 
 import {
   Button,
@@ -22,8 +23,8 @@ export default function Request() {
 
   return (
     <>
-      <StyledMain>
-        <div className="main">
+      <StyledRequest>
+        <header>
           <Button
             m="1em"
             ref={btnRef}
@@ -31,10 +32,12 @@ export default function Request() {
             onClick={onOpen}>
             <strong style={{ color: "#ff0000" }}>{isOpen ? "cerrar" : "abrir"}</strong>
           </Button>
-          <Heading>CONSULTAS</Heading>
+        </header>
+        <div className="container">
+         <section>
+          <Renewal />
+         </section>
         </div>
-
-
 
         <Drawer
           isOpen={isOpen}
@@ -56,13 +59,28 @@ export default function Request() {
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
-      </StyledMain>
+      </StyledRequest>
     </>
   )
 }
 
-const StyledMain = styled.div`
-  
+const StyledRequest = styled.div`
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  border-radius: 5px;
+  max-width: 500px;
+}
 }
   
   

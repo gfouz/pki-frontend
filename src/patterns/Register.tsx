@@ -121,6 +121,7 @@ export default function Resgister() {
                 <Radio
                   m="0 1em"
                   value="juridica"
+                  colorScheme='red'
                   isChecked={radio == "juridica" ? true : false}
                 >
                   Persona jurídica
@@ -128,6 +129,7 @@ export default function Resgister() {
                 <Radio
                   m="0 1em"
                   value="natural"
+                  colorScheme='red'
                   isChecked={radio == "natural" ? true : false}
                 >
                   Persona Natural

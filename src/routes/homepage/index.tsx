@@ -6,6 +6,7 @@ import {asideStyle} from './constant';
 
 import {
   Button,
+  Heading,
   Drawer,
   DrawerBody,
   DrawerFooter,
@@ -25,15 +26,21 @@ export default function Homepage() {
     <>
       <StyledMain>
 
-        <div className="main">
+        <header>
           <Button
             m="1em"
             ref={btnRef}
             variant='ghost'
             onClick={onOpen}>
-            <strong style={{ color: "#ffffff" }}>{isOpen ? "cerrar" : "abrir"}</strong>
+            <strong style={{ color: "#ffffff" }}>{isOpen ? "CERRAR" : "ABRIR"}</strong>
           </Button>
-        </div>
+        </header>
+        <section>
+              <img src="./images/homex.jpg" alt="Homepage" />
+        </section>
+        <footer>
+           <Heading  size='sm'>Segurmática &copy; {new Date().getFullYear()}</Heading>
+        </footer>
         <Drawer
           isOpen={isOpen}
           placement='left'
@@ -60,45 +67,24 @@ export default function Homepage() {
 }
 
 const StyledMain = styled.div`
+  width: 100%;
   height: 100%;
-  .main {   
-  min-height: 100vh;  
-  background-image: url(./images/home7.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-  .main__title { 
-  min-height: calc(100vh - 72px);  
+  header {
+    background-color:#3d6d67;
+  }
+  section {
   display: flex;
-  flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;  
+  background-color: #7eeee0;
   }
-  .textstack {
-    padding: 2em;
-    @media (min-width: 750px) {
-      padding: 4em;
-     }  
-  }
-  .textstack__title {
-    color: #ffffff;
-    display: inline;
-    padding: 0 10px;
-    font-family: orangina;
-    letter-spacing: 5px;
-    border-radius: 15px;
-    background-color: #22222285;
-    @media (min-width: 510px) {
-      font-size: 2.5em;
-     }
-    @media (min-width: 750px) {
-      font-size: 3.5em; 
-     }  
-  }
-  .textstack__subtitle {
-    color: #ffffff;
-     width: fit-content;
-     background-color: #22222285;
-  }
+footer {
+  padding: 2em 0;
+  color: #f8f8f8;
+  text-align: center;
+  background-color:#3d6d67;
+}
+  
   
 `;
