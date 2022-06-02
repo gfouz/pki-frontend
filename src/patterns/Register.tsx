@@ -30,6 +30,7 @@ import {
 
 export default function Resgister() {
   const [color, setColor] = React.useState("#666666");
+  const [alert, setAlert] = React.useState("");
   const [radio, setRadio] = React.useState("juridica");
   const {
     register,
@@ -42,16 +43,16 @@ export default function Resgister() {
   function eventHandler(evt: React.ChangeEvent<HTMLInputElement>) {
     let { value } = evt.target;
     let items = value.length;
-    if (items && items === 11) setColor("#66CC00");
-    if (items && items > 11) setColor("#ff0000");
-    if (items && items < 11) setColor("#CCCCCC");
+    items && items === 11 ? setColor("#66CC00") : setAlert("Validos 11 números");
+    items && items > 11 ? setColor("#ff0000") : setAlert("Complete 11 numeros");
+    items && items < 11 ? setColor("#CCCCCC") : setAlert("Número excedido de 11");
   }
   return (
     <>
       <StyledRegister>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Center w="100%" p="1.5em">
-            <Heading as="h3" size="lg" color="#e53e3e">
+            <Heading as="h3" size="lg" color="#B22222">
               Solicitud de Generación
             </Heading>
           </Center>

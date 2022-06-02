@@ -33,12 +33,12 @@ function Login() {
             variant="ghost"
             onClick={onOpen}
             className="toggle-button">
-            <strong style={{ ...toggleButton }}>{isOpen ? "cerrar" : "abrir"}</strong>
+            <strong style={{ ...toggleButton }}>{isOpen ? "CERRAR" : "ABRIR"}</strong>
            </Button>
         </header>
         <section className="login">
          <div className="login__divider">
-          <img className="login__image" src="./images/login5.jpg" />
+          <img className="login__image" src="./images/register5.jpg" />
          </div>
          <div className="login__divider"> 
           <Register />
@@ -73,9 +73,9 @@ function Login() {
 export default Login;
 const StyledResgister = styled.div`
     width: 100%;
-    background-color: #ffffff;
+    background-color: #f8f8f8;
     header {
-      background-color: #333333;
+      background-color: #777777;
     }
     .login { 
     position: relative;
@@ -96,9 +96,9 @@ const StyledResgister = styled.div`
       object-fit: fill;
     }
     footer {
-      color: #e1cf62;
+      color: #FFFFFF;
       padding: 1.5em 0;
       text-align: center;
-      background-color: #333333;
+      background-color: #777777;
     }
 `;

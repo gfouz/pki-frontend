@@ -26,6 +26,7 @@ function Services() {
 	return(
     <>
      <StyledService>		
+         <header>
           <Button
             m="1em"
             ref={btnRef}
@@ -35,13 +36,15 @@ function Services() {
             >
             <strong style={{ ...toggleButton }}>{isOpen ? "CERRAR" : "ABRIR"}</strong>
           </Button>
-          <Heading color="#e1cf62" m="2em">Servicios</Heading>
+         </header> 
           <Glider />
-
+         <footer>
+            <Heading  size='sm'>Segurmática &copy; {new Date().getFullYear()}</Heading>
+        </footer>
 
         {/*THIS IS THE LATERAL MENU AND IS ABSOLUTE TO THE BODY*/}
 
-        <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
+        <Drawer isOpen={isOpen} placement='left' onClose={onClose}>
           <DrawerOverlay />
           <DrawerContent style={{...sidebarContent}}>
             <DrawerCloseButton style={{color:"crimson"}}/>
@@ -66,16 +69,25 @@ export default Services;
 
 const StyledService = styled.div`
 position: relative;
-background-color: #222222;
+background-image: linear-gradient(#ffffff, #ffffff, #0c303c);
 width: 100%;
 min-height: 100vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+header {
+  width: 100%;
+  padding: 1em 0;
+}
 .toggle-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  
+}
+footer {
+  width: 100%;
+color: #e1cf62;
+padding: 1.5em 0;
+text-align: center;
+background-color: #333333;
 }
 `;

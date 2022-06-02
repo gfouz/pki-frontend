@@ -19,7 +19,7 @@ backgroundSize: "200px"
 }
 
 export const toggleButton: ToggleButtonProps = {
-	color: "#e1cf62",
+	color: "#f8f8f8",
 }
 
 

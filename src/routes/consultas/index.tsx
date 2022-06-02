@@ -38,7 +38,7 @@ export default function Request() {
 
         <Drawer
           isOpen={isOpen}
-          placement='right'
+          placement='left'
           onClose={onClose}
         >
           <DrawerOverlay />

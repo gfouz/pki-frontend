@@ -3,22 +3,35 @@ import styled from 'styled-components';
 
 export const StyledSlider = styled.div`
   width: 100%;
+  min-height: 100vh;
   .glider {
 
   }
   .glider__item {
      position: relative;
-     width: 100%;
+
      display: flex;
      justify-content: center;
+
+     width: 100%;
+     padding: 2em 0;
     }
+  .glider-image__box {
+    position: relative;
+    padding: 10px;
+    max-width:450px;
+    border-radius: 20px;
+  }  
   .glider__image {
-      max-width: 300px;
+      max-width: 100%;
       height: auto;
+      border-radius: 20px;
+      box-shadow: 1px 1px 20px #222222;
      } 
   .glider__text {
     position: absolute;
     padding: 1em;
+    color: #666666;
   }    
     .slick-dots li button:before {
     font-family: 'slick';

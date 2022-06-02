@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import Slider from "react-slick";
+import {sliderText} from './constants';
 import {Heading} from '@chakra-ui/react';
 import {StyledSlider} from './Slider.Styled'
 import "slick-carousel/slick/slick.css";
@@ -33,55 +34,70 @@ export default function Glider() {
      <div>
       <section className="glider">
       <div className="glider__item">
+       <div className="glider-image__box">
+        <p className="glider__text">{sliderText}</p>
         <img 
          className="glider__image"
          src="./images/services.jpg" 
          alt="services"
         />
+       </div> 
       </div>
     </section>
      </div> 
      <div>
       <section className="glider">
       <div className="glider__item">
+       <div className="glider-image__box">
+        <p className="glider__text">{sliderText}</p>
         <img 
          className="glider__image"
          src="./images/services.jpg" 
          alt="services"
         />
+       </div> 
       </div>
     </section>
      </div> 
      <div>
       <section className="glider">
       <div className="glider__item">
-      <img 
+       <div className="glider-image__box">
+       <p className="glider__text">{sliderText}</p>
+       <img 
          className="glider__image"
          src="./images/services.jpg" 
          alt="services"
         />
+      </div>
       </div>  
     </section>
      </div>
      <div>
       <section className="glider">
       <div className="glider__item">
+        <div className="glider-image__box">
+        <p className="glider__text">{sliderText}</p>
         <img 
          className="glider__image"
          src="./images/services.jpg" 
          alt="services"
         />
+       </div> 
       </div>
     </section>
      </div> 
      <div>
       <section className="glider">
       <div className="glider__item">
+        <div className="glider-image__box">
+        <p className="glider__text">{sliderText}</p>
         <img 
          className="glider__image"
          src="./images/services.jpg" 
          alt="services"
         />
+       </div> 
       </div>  
     </section>
      </div> 

@@ -12,9 +12,6 @@ export default function Card() {
   
   return (
    <StyledSkeleton> 
-    <Box w="100%">
-      <Skeleton  height='100px' startColor='grey' />
-    </Box>
       <Heading 
         size='2xl' 
         color='#66CC00'
@@ -22,7 +19,7 @@ export default function Card() {
       LOADING...
       </Heading>
     <Box w="100%">
-      <Skeleton  height='100px' startColor='grey' />
+      <Skeleton  height='20px' startColor='grey' />
     </Box>
    </StyledSkeleton>  
   )
@@ -35,7 +32,7 @@ const StyledSkeleton = styled.div`
  display: flex;
  flex-direction: column;
  justify-content: center;
- align-items: center;
+ align-items: flex-start;
 `;
 
 //how to add a new declaration (.d.ts) file containing `declare module 'react-slick
