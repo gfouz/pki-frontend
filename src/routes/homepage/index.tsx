@@ -69,6 +69,7 @@ export default function Homepage() {
 const StyledMain = styled.div`
   width: 100%;
   height: 100%;
+  background-color: #7eeee0;
   header {
     background-color:#3d6d67;
   }
@@ -78,8 +79,14 @@ const StyledMain = styled.div`
   align-items: center; 
   height: 100vh;  
   background-color: #7eeee0;
+   img {
+    max-width: 100%;
+    height: auto;
+    margin: 3em 0 3em 0;
+   }
   }
 footer {
+  margin: 2em 0 0 0;
   padding: 2em 0;
   color: #f8f8f8;
   text-align: center;
