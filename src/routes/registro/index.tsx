@@ -38,7 +38,7 @@ function Login() {
         </header>
         <section className="login">
          <div className="login__divider">
-          <img className="login__image" src="./images/register5.jpg" />
+          <img className="login__image" src="./images/generation.jpg" />
          </div>
          <div className="login__divider"> 
           <Register />
@@ -59,10 +59,7 @@ function Login() {
               <Header color="#800080" column />
             </DrawerBody>
             <DrawerFooter>
-              <Button variant='outline' mr={3} onClick={onClose}>
-                Cancel
-              </Button>
-              <Button colorScheme='purple'>Save</Button>
+      
             </DrawerFooter>
           </DrawerContent>
         </Drawer>

@@ -30,7 +30,7 @@ export default function Request() {
             ref={btnRef}
             variant='ghost'
             onClick={onOpen}>
-            <strong style={{ color: "#ff0000" }}>{isOpen ? "cerrar" : "abrir"}</strong>
+            <strong style={{ color: "#ff0000" }}>{isOpen ? "CERRAR" : "ABRIR"}</strong>
           </Button>
         </header>
         <div className="container">
@@ -52,10 +52,7 @@ export default function Request() {
               <Header color="#800080" column />
             </DrawerBody>
             <DrawerFooter>
-              <Button variant='outline' mr={3} onClick={onClose}>
-                Cancel
-              </Button>
-              <Button colorScheme='purple'>Save</Button>
+              
             </DrawerFooter>
           </DrawerContent>
         </Drawer>

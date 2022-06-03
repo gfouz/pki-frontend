@@ -53,10 +53,7 @@ function Services() {
               <Header color="#805ad5" column />
             </DrawerBody>
             <DrawerFooter>
-              <Button variant='outline' mr={3} onClick={onClose}>
-                Cancel
-              </Button>
-              <Button colorScheme='purple'>Save</Button>
+              
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
