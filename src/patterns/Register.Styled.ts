@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const StyledRegister = styled.div`
-  background-color: #F8F8F8;
+  background-color: #fefefe;
   width: 100%;
   display: flex;
   flex-direction: column;
