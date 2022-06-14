@@ -1,5 +1,5 @@
 type asideStyleProps = {
-height: string;  
+height: string;
 backgroundImage: string;
 backgroundPosition: string;
 backgroundRepeat: string;

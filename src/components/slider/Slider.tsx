@@ -35,6 +35,7 @@ export default function Glider() {
       <section className="glider">
       <div className="glider__item">
        <div className="glider-image__box">
+        <Heading size="sm" m="0em 1em" color="#cccccc">PKI Servicios</Heading>
         <p className="glider__text">{sliderText}</p>
        </div> 
       </div>
@@ -44,8 +45,8 @@ export default function Glider() {
       <section className="glider">
       <div className="glider__item">
        <div className="glider-image__box">
+        <Heading size="sm" m="0em 1em" color="#cccccc">PKI Servicios</Heading>
         <p className="glider__text">{sliderText}</p>
-
        </div> 
       </div>
     </section>
@@ -54,6 +55,7 @@ export default function Glider() {
       <section className="glider">
       <div className="glider__item">
        <div className="glider-image__box">
+       <Heading size="sm" m="0em 1em" color="#cccccc">PKI Servicios</Heading>
        <p className="glider__text">{sliderText}</p>
        
       </div>
@@ -64,6 +66,7 @@ export default function Glider() {
       <section className="glider">
       <div className="glider__item">
         <div className="glider-image__box">
+        <Heading size="sm" m="0em 1em" color="#cccccc">PKI Servicios</Heading>
         <p className="glider__text">{sliderText}</p>
         
        </div> 
@@ -74,6 +77,7 @@ export default function Glider() {
       <section className="glider">
       <div className="glider__item">
         <div className="glider-image__box">
+        <Heading size="sm" m="0em 1em" color="#cccccc">PKI Servicios</Heading>
         <p className="glider__text">{sliderText}</p>
        </div> 
       </div>  

@@ -57,7 +57,7 @@ function Login() {
         
          <Drawer isOpen={isOpen} placement='left' onClose={onClose}>
           <DrawerOverlay />
-          <DrawerContent style={{...lateralMenu}}>
+          <DrawerContent>
             <DrawerCloseButton style={{color:"#222222"}}/>
             <DrawerHeader>
                 <img 
@@ -69,7 +69,7 @@ function Login() {
               <Header color="#800080" column />
             </DrawerBody>
             <DrawerFooter>
-      
+               <div style={{...lateralMenu}}></div>
             </DrawerFooter>
           </DrawerContent>
         </Drawer>

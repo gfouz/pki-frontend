@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from 'styled-components';
 import Header from '../../components/header/Header';
 import HorizonLine from '../../components/HorizonLine';
-import {asideStyle, mainTitleProps, subTitleProps, logoProps} from './constant';
+import {drawerProps, mainTitleProps, subTitleProps, logoProps} from './constant';
 
 
 import {
@@ -43,7 +43,8 @@ export default function Homepage() {
                  src="./images/segurmatica.jpg" 
                  alt="Segurmática" />
               <p className="article__pki">PKI</p>   
-              <HorizonLine color="crimson"/> 
+              <HorizonLine color="#1799ff"/> 
+              <Heading  {...subTitleProps}>25 años de experincia en seguridad.</Heading>
               <Heading  {...subTitleProps}>Servicio de llave pública.</Heading>
               <Heading  {...subTitleProps}>{new Date().getFullYear()}</Heading>
              </article>  
@@ -59,19 +60,20 @@ export default function Homepage() {
           onClose={onClose}
         >
           <DrawerOverlay />
-          <DrawerContent style={{...asideStyle}}>
+          <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader>
                <img 
-                 style={{width:"150px"}}
+                 style={{width:"120px"}}
                  src="./images/segurmatica.jpg" 
                  alt="Segurmática" />
             </DrawerHeader>
-            <DrawerBody>
+            <DrawerBody >
               <Header color="#1a2253" column />
             </DrawerBody>
             <DrawerFooter>
             </DrawerFooter>
+              <div style={{...drawerProps}}></div>
           </DrawerContent>
         </Drawer>
       </StyledHome>
@@ -118,7 +120,7 @@ const StyledHome = styled.div`
     .article__pki {
       opacity: 0;
       color: #0099FF;
-      font-size: 2.7em;
+      font-size: 3.2em;
       font-weight: bolder;
       font-family: calibri;
       animation: pki;

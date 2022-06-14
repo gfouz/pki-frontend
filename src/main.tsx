@@ -6,6 +6,8 @@ const Homepage = lazy(() => import("./routes/homepage/index"));
 const Login = lazy(() => import("./routes/registro/index"));
 const Request = lazy(() => import("./routes/consultas/index"));
 const Services = lazy(() => import("./routes/services/index"));
+const Contacts = lazy(() => import("./routes/contacts/index"));
+const Downloads = lazy(() => import("./routes/downloads/index"));
 import { HashRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 
@@ -21,6 +23,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/registro" element={<Login />} />
             <Route path="/consultas" element={<Request />} />
             <Route path="/servicios" element={<Services />} />
+            <Route path="/contactos" element={<Contacts />} />
+            <Route path="/descargas" element={<Downloads />} />
           </Routes>
         </Suspense>
       </HashRouter>

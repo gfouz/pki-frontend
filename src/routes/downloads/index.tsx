@@ -1,8 +1,8 @@
 import * as React from "react";
 import styled from 'styled-components';
-import Header from '../../components/header/Header'
-import Renewal from '../../patterns/Renewal'
-import ErrorMessage from '../../components/ErrorMessage'
+import Header from '../../components/header/Header';
+import {drawerProps} from './constant';
+
 
 import {
   Button,
@@ -17,30 +17,28 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/react'
 
-export default function Request() {
+export default function Homepage() {
 
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef: React.LegacyRef<HTMLButtonElement> = React.useRef(null)
 
   return (
     <>
-      <StyledRequest>
+      <StyledHome>
         <header>
           <Button
             m="1em"
             ref={btnRef}
             variant='ghost'
             onClick={onOpen}>
-            <strong style={{ color: "#ff0000" }}>{isOpen ? "CERRAR" : "ABRIR"}</strong>
+            <strong style={{ color: "#555555" }}>{isOpen ? "CERRAR" : "ABRIR"}</strong>
           </Button>
         </header>
-        <div className="container">
-         <section>
-          <Renewal />
-         </section>
-         <ErrorMessage msg="errror" />
-        </div>
 
+      
+        <footer>
+           <Heading  size='sm'>Segurmática &copy; {new Date().getFullYear()}</Heading>
+        </footer>
         <Drawer
           isOpen={isOpen}
           placement='left'
@@ -50,43 +48,39 @@ export default function Request() {
           <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader>
-                  <img 
+               <img 
                  style={{width:"120px"}}
                  src="./images/segurmatica.jpg" 
-                 alt="Segurmática" /> 
+                 alt="Segurmática" />
             </DrawerHeader>
-            <DrawerBody>
-              <Header color="#800080" column />
+            <DrawerBody >
+              <Header color="#1a2253" column />
             </DrawerBody>
             <DrawerFooter>
-              
             </DrawerFooter>
+              <div style={{...drawerProps}}></div>
           </DrawerContent>
         </Drawer>
-      </StyledRequest>
+      </StyledHome>
     </>
   )
 }
 
-const StyledRequest = styled.div`
-
-  .container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  section {
+const StyledHome = styled.div`
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid red;
-  border-radius: 5px;
-  max-width: 500px;
-}
-}
+  justify-content: space-between;
   
-  
+  header {
+    width: 100%;
+    background-color: #9f0bfe;
+  }
+  footer {
+    width: 100%;
+    color: #ffffff;
+    padding: 2em;
+    text-align: center;
+    background-color: #9f0bfe;
+  }
 `;

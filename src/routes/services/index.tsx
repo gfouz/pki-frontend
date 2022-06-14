@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import { sidebarContent, toggleButton } from './constants'
+import { footerProps, toggleButton } from './constants'
 import Header from '../../components/header/Header';
 import Glider from '../../components/slider/Slider'
 import {
@@ -48,11 +48,11 @@ function Services() {
 
         <Drawer isOpen={isOpen} placement='left' onClose={onClose}>
           <DrawerOverlay />
-          <DrawerContent style={{...sidebarContent}}>
+          <DrawerContent >
             <DrawerCloseButton style={{color:"crimson"}}/>
             <DrawerHeader>
                <img 
-                 style={{width:"150px"}}
+                 style={{width:"120px"}}
                  src="./images/segurmatica.jpg" 
                  alt="Segurmática" />
             </DrawerHeader>
@@ -60,7 +60,7 @@ function Services() {
               <Header color="#805ad5" column />
             </DrawerBody>
             <DrawerFooter>
-              
+             <div style={{...footerProps}}></div>
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
@@ -73,8 +73,12 @@ export default Services;
 
 const StyledService = styled.div`
 position: relative;
-background-image: url('./images/storm.jpg');
-background-position: center center;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+background-image: url('./images/xx.jpg');
+background-position: top;
 background-size: cover;
 background-repeat: no-repeat;
 width: 100%;
@@ -85,12 +89,6 @@ header {
   padding: 0.1em 0;
   background-color: #333333;
 }
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
 footer {
   width: 100%;
 color: #e1cf62;

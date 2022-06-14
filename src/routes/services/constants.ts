@@ -1,8 +1,9 @@
 type SidebarTypes = {
+width: string;
+height: string;
 backgroundImage: string;
 backgroundPosition: string;
 backgroundRepeat: string;
-backgroundAttachment: string;
 backgroundSize: string;
 }
 
@@ -10,12 +11,13 @@ type ToggleButtonTypes = {
   color: string;
 }
 
-export const sidebarContent: SidebarTypes = {
+export const footerProps: SidebarTypes = {
+width: "100%",  
+height: "150px", 
 backgroundImage: `url('./images/aside.jpg')`,
-backgroundPosition: "center center",
+backgroundPosition: "center",
 backgroundRepeat: "no-repeat",
-backgroundAttachment: "fixed",
-backgroundSize: "200px"
+backgroundSize: "120px"
 }
 
 export const toggleButton: ToggleButtonTypes = {

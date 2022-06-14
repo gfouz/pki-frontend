@@ -21,7 +21,7 @@ const StyledLine = styled.div`
    	 position: relative;
    	 left: 5%;
      right: 5%;
-     height: 3px;
+     height: 5px;
      border-radius: 2px;
      animation: line 2s;
      animation-fill-mode: forwards;

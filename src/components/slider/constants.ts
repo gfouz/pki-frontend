@@ -12,5 +12,5 @@ export const sliderText: string = `La empresa Segurmática brinda servicios
   proporciona una verificación de la identidad 
   segura y precisa, además, protege la integridad 
   y la confidencialidad de la información. 
-
+  Gracias por su atención.
 	`;

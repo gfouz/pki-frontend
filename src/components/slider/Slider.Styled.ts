@@ -19,12 +19,10 @@ export const StyledSlider = styled.div`
   .glider-image__box {
     position: relative;
     padding: 10px;
-    max-width:600px;
-    border-radius: 20px;
-    background-color: #44444490;   
+    max-width:500px;
+    background-color: #44444499;   
   }  
   .glider__text {
-    font-size: 1.2em;
     padding: 1em;
     font-family: calibri;
     color: #f1f1f1;
