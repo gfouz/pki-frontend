@@ -37,7 +37,9 @@ function Services() {
             <strong style={{ ...toggleButton }}>{isOpen ? "CERRAR" : "ABRIR"}</strong>
           </Button>
          </header> 
-          <Glider />
+        
+           <Glider />
+  
          <footer>
             <Heading  size='sm'>Segurmática &copy; {new Date().getFullYear()}</Heading>
         </footer>
@@ -48,7 +50,12 @@ function Services() {
           <DrawerOverlay />
           <DrawerContent style={{...sidebarContent}}>
             <DrawerCloseButton style={{color:"crimson"}}/>
-            <DrawerHeader style={{ color: "crimson" }}>PKI-SERVICIOS</DrawerHeader>
+            <DrawerHeader>
+               <img 
+                 style={{width:"150px"}}
+                 src="./images/segurmatica.jpg" 
+                 alt="Segurmática" />
+            </DrawerHeader>
             <DrawerBody>
               <Header color="#805ad5" column />
             </DrawerBody>
@@ -66,20 +73,24 @@ export default Services;
 
 const StyledService = styled.div`
 position: relative;
-background-image: linear-gradient(#ffffff, #ffffff, #0c303c);
+background-image: url('./images/storm.jpg');
+background-position: center center;
+background-size: cover;
+background-repeat: no-repeat;
 width: 100%;
 min-height: 100vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+
 header {
   width: 100%;
-  padding: 1em 0;
+  padding: 0.1em 0;
+  background-color: #333333;
 }
-.toggle-button {
-  
-}
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
 footer {
   width: 100%;
 color: #e1cf62;

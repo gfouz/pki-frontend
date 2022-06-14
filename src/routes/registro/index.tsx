@@ -59,7 +59,12 @@ function Login() {
           <DrawerOverlay />
           <DrawerContent style={{...lateralMenu}}>
             <DrawerCloseButton style={{color:"#222222"}}/>
-            <DrawerHeader style={{ color: "#CC3333" }}>PKI-REGISTROS</DrawerHeader>
+            <DrawerHeader>
+                <img 
+                 style={{width:"150px"}}
+                 src="./images/segurmatica.jpg" 
+                 alt="Segurmática" />
+            </DrawerHeader>
             <DrawerBody>
               <Header color="#800080" column />
             </DrawerBody>

@@ -2,6 +2,7 @@ import * as React from "react";
 import styled from 'styled-components';
 import Header from '../../components/header/Header'
 import Renewal from '../../patterns/Renewal'
+import ErrorMessage from '../../components/ErrorMessage'
 
 import {
   Button,
@@ -37,6 +38,7 @@ export default function Request() {
          <section>
           <Renewal />
          </section>
+         <ErrorMessage msg="errror" />
         </div>
 
         <Drawer
@@ -47,7 +49,12 @@ export default function Request() {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader style={{ color: "#DC143C" }}>PKI-CONSULTAS</DrawerHeader>
+            <DrawerHeader>
+                  <img 
+                 style={{width:"150px"}}
+                 src="./images/segurmatica.jpg" 
+                 alt="Segurmática" /> 
+            </DrawerHeader>
             <DrawerBody>
               <Header color="#800080" column />
             </DrawerBody>
@@ -66,6 +73,7 @@ const StyledRequest = styled.div`
   .container {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }

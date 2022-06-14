@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const StyledSlider = styled.div`
   width: 100%;
-  min-height: 100vh;
+  
   .glider {
 
   }
@@ -19,19 +19,15 @@ export const StyledSlider = styled.div`
   .glider-image__box {
     position: relative;
     padding: 10px;
-    max-width:450px;
+    max-width:600px;
     border-radius: 20px;
+    background-color: #44444490;   
   }  
-  .glider__image {
-      max-width: 100%;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: 1px 1px 20px #222222;
-     } 
   .glider__text {
-    position: absolute;
+    font-size: 1.2em;
     padding: 1em;
-    color: #666666;
+    font-family: calibri;
+    color: #f1f1f1;
   }    
     .slick-dots li button:before {
     font-family: 'slick';

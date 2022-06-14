@@ -43,8 +43,9 @@ export default function Homepage() {
                  src="./images/segurmatica.jpg" 
                  alt="Segurmática" />
               <p className="article__pki">PKI</p>   
-              <HorizonLine color="#f12d39"/> 
+              <HorizonLine color="crimson"/> 
               <Heading  {...subTitleProps}>Servicio de llave pública.</Heading>
+              <Heading  {...subTitleProps}>{new Date().getFullYear()}</Heading>
              </article>  
               <img src="./images/robot.jpg" alt="robot" />
              
@@ -116,13 +117,13 @@ const StyledHome = styled.div`
     }
     .article__pki {
       opacity: 0;
-      color: crimson;
-      font-size: 2em;
+      color: #0099FF;
+      font-size: 2.7em;
       font-weight: bolder;
       font-family: calibri;
       animation: pki;
       animation-delay: 0.2s;
-      animation-duration: 1s;
+      animation-duration: 1.5s;
       animation-direction: normal;
       animation-fill-mode: forwards;
     }
@@ -149,11 +150,11 @@ footer {
 @keyframes pki {
   from {
    opacity: 0; 
-   transform: translateX(100px);
+   transform: translateY(-100px);
   }
   to {
    opacity: 1; 
-   transform: translateX(0);
+   transform: translateY(0);
   }
 }
 `;

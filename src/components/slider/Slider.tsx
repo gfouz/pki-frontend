@@ -36,11 +36,6 @@ export default function Glider() {
       <div className="glider__item">
        <div className="glider-image__box">
         <p className="glider__text">{sliderText}</p>
-        <img 
-         className="glider__image"
-         src="./images/services.jpg" 
-         alt="services"
-        />
        </div> 
       </div>
     </section>
@@ -50,11 +45,7 @@ export default function Glider() {
       <div className="glider__item">
        <div className="glider-image__box">
         <p className="glider__text">{sliderText}</p>
-        <img 
-         className="glider__image"
-         src="./images/services.jpg" 
-         alt="services"
-        />
+
        </div> 
       </div>
     </section>
@@ -64,11 +55,7 @@ export default function Glider() {
       <div className="glider__item">
        <div className="glider-image__box">
        <p className="glider__text">{sliderText}</p>
-       <img 
-         className="glider__image"
-         src="./images/services.jpg" 
-         alt="services"
-        />
+       
       </div>
       </div>  
     </section>
@@ -78,11 +65,7 @@ export default function Glider() {
       <div className="glider__item">
         <div className="glider-image__box">
         <p className="glider__text">{sliderText}</p>
-        <img 
-         className="glider__image"
-         src="./images/services.jpg" 
-         alt="services"
-        />
+        
        </div> 
       </div>
     </section>
@@ -92,11 +75,6 @@ export default function Glider() {
       <div className="glider__item">
         <div className="glider-image__box">
         <p className="glider__text">{sliderText}</p>
-        <img 
-         className="glider__image"
-         src="./images/services.jpg" 
-         alt="services"
-        />
        </div> 
       </div>  
     </section>

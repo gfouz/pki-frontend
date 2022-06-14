@@ -1,7 +1,15 @@
 import * as React from "react";
 import Option from "../components/Option";
 import { StyledRegister } from "./Register.Styled";
-import { IFormInput, IdRegisterRules } from "./constants";
+import {
+  IFormInput,
+  IdRegisterRules,
+  warningState,
+  green,
+  red,
+  grey,
+  black,
+} from "./constants";
 import { useForm, SubmitHandler } from "react-hook-form";
 import {
   ORGANISMOS,
@@ -29,7 +37,7 @@ import {
 } from "@chakra-ui/react";
 
 export default function Resgister() {
-  const [color, setColor] = React.useState("#666666");
+  const [tip, setTip] = React.useState(warningState);
   const [alert, setAlert] = React.useState("");
   const [radio, setRadio] = React.useState("juridica");
   const {
@@ -40,13 +48,17 @@ export default function Resgister() {
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
 
-  function eventHandler(evt: React.ChangeEvent<HTMLInputElement>) {
+  function idEventHandler(evt: React.ChangeEvent<HTMLInputElement>) {
     let { value } = evt.target;
-    let items = value.length;
-    items && items === 11 ? setColor("#66CC00") : setAlert("Validos 11 números");
-    items && items > 11 ? setColor("#ff0000") : setAlert("Complete 11 numeros");
-    items && items < 11 ? setColor("#CCCCCC") : setAlert("Número excedido de 11");
+    let length = value.length;
+    setTip((prev) => {
+      return { ...prev, id: value };
+    });
+    length === 11 ? setTip((prev) => green(prev)) : setAlert("warning");
+    length > 11 ? setTip((prev) => red(prev)) : setAlert("warning");
+    length < 11 ? setTip((prev) => grey(prev)) : setAlert("warning");
   }
+
   return (
     <>
       <StyledRegister>
@@ -61,7 +73,7 @@ export default function Resgister() {
           </Center>
           <HStack spacing={2} p="0.7em">
             <Container>
-              <label style={{ color: `${color}` }}>
+              <label style={{ color: `${tip.color}` }}>
                 <strong>ID</strong>
               </label>
               <Input
@@ -70,7 +82,7 @@ export default function Resgister() {
                 placeholder={errors.id ? "Valido 11 dígitos" : " "}
                 {...register("id", {
                   ...IdRegisterRules,
-                  onChange: (e) => eventHandler(e)
+                  onChange: (e) => idEventHandler(e),
                 })}
               />
             </Container>
@@ -121,7 +133,7 @@ export default function Resgister() {
                 <Radio
                   m="0 1em"
                   value="juridica"
-                  colorScheme='red'
+                  colorScheme="red"
                   isChecked={radio == "juridica" ? true : false}
                 >
                   Persona jurídica
@@ -129,7 +141,7 @@ export default function Resgister() {
                 <Radio
                   m="0 1em"
                   value="natural"
-                  colorScheme='red'
+                  colorScheme="red"
                   isChecked={radio == "natural" ? true : false}
                 >
                   Persona Natural
@@ -201,7 +213,11 @@ export default function Resgister() {
           )}
           <Box p="0 1em" w="100%">
             <Flex justifyContent="flex-start">
-              <Checkbox m="0 0.7em" colorScheme='red'>
+              <Checkbox
+                m="0 0.7em"
+                colorScheme="red"
+                {...register("condiciones")}
+              >
                 Acepto los terminos y condiciones.
               </Checkbox>
             </Flex>

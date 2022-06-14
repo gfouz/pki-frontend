@@ -36,11 +36,11 @@ export const mainTitleProps: MainTitleTypes = {
 export const subTitleProps: MainTitleTypes = {
  size:"sm",
  m:"0.5em 0", 
- color:"#666666",
+ color:"crimson",
  fontFamily: "calibri"
 }
 
 export const logoProps: LogoTypes = {
-  width: "300px",
+  width: "250px",
   height: "auto"
 }

@@ -19,7 +19,7 @@ backgroundSize: "200px"
 }
 
 export const toggleButton: ToggleButtonTypes = {
-	color: "#225566",
+	color: "#cccccc",
 }
 
 export const serviceAbout:()=>string  = ()=> {
