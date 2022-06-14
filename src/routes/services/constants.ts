@@ -17,7 +17,7 @@ height: "150px",
 backgroundImage: `url('./images/aside.jpg')`,
 backgroundPosition: "center",
 backgroundRepeat: "no-repeat",
-backgroundSize: "120px"
+backgroundSize: "70px"
 }
 
 export const toggleButton: ToggleButtonTypes = {

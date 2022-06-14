@@ -25,14 +25,20 @@ export const StyledHeader = styled.div`
        padding: 1em 0;
     }
     &__item {
-      color: ${(props: HeaderProps) => props.color};
-      font-weight: bolder;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: all 0.4s;
+       display: flex;
+       padding: 0.4em;
     }
     &__item:hover {
-      color: green;
+      color: blue;
+    }
+  .nav__icon {
+    position: relative;
+    top: 5px;
+    margin: 0 2em 0 0;
+  }
+  &__link {
+      color:#999999;
+      font-weight: bolder;
     }
   }
   .hidden {
@@ -41,7 +47,6 @@ export const StyledHeader = styled.div`
   .visible {
     font-family: inherit;
   }
-
   ${(props: HeaderProps) =>
     props.mixed &&
     css`

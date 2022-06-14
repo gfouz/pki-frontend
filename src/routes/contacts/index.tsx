@@ -39,9 +39,9 @@ function Contacts() {
         <section className="cmain">
           <article className="cmain__divider">
               <h2 className="cmain__title"> Contacte nos aquí!</h2>
-              <img src="./images/landscape.jpg"  />
+              <img src="./images/habana.jpg"  />
           </article>
-          <article className="cmain__divider cmain-flex">
+          <article className="cmain__divider">
             <ContactForm />
           </article>
         </section>
@@ -100,12 +100,16 @@ const StyledContact = styled.div`
     top: 40%;
     left:50%;
     white-space: nowrap;
-    font-size: 1.7em;
+    font-size: 1.6em;
     font-weight: bolder;
     text-transform: uppercase;
     transform: translate(-50%, -50%);
    } 
    .cmain__divider {
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
     text-align: center;
     width: 100%;
     position:relative;
@@ -116,11 +120,5 @@ const StyledContact = styled.div`
     color: #ffffff;
     text-align: center;
     background-color: #0f0d18;
-   }
-   .cmain-flex {
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
    }
 `;

@@ -14,6 +14,7 @@ type MainTitleTypes = {
 }
 
 type LogoTypes = {
+  margin: string;
   width: string;
   height: string;
 }
@@ -23,7 +24,7 @@ height: "150px",
 backgroundImage: `url('./images/aside.jpg')`,
 backgroundPosition: "center",
 backgroundRepeat: "no-repeat",
-backgroundSize: "120px"
+backgroundSize: "70px"
 }
 
 export const mainTitleProps: MainTitleTypes = {
@@ -41,6 +42,7 @@ export const subTitleProps: MainTitleTypes = {
 }
 
 export const logoProps: LogoTypes = {
-  width: "250px",
-  height: "auto"
+  width: "150px",
+  height: "auto",
+  margin: "0 3.5em"
 }

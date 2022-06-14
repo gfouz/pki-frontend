@@ -37,8 +37,8 @@ export default function ContactForm() {
             <Heading as="h3" size="lg" color="#810606">CONTACTO</Heading>
           </Center>
           <HStack spacing={2} p="0.7em">
-            <Container>
-              <label style={{ color:"#444444" }}>
+            <Container textAlign="left">
+              <label style={{ color:"#888888"}}>
                 <strong>Nombre</strong>
               </label>
               <Input 
@@ -49,8 +49,8 @@ export default function ContactForm() {
             </Container>
           </HStack>  
           <HStack spacing={2} p="0.7em">
-             <Container>
-              <label>
+             <Container textAlign="left">
+              <label style={{ color:"#888888" }}>
                 <strong>Email</strong>
               </label>
               <Input 
@@ -61,8 +61,8 @@ export default function ContactForm() {
             </Container>
           </HStack>
            <HStack spacing={2} p="0.7em">
-             <Container>
-              <label>
+             <Container textAlign="left">
+              <label style={{ color:"#888888" }}>
                 <strong>Message</strong>
               </label>
               <Input 
@@ -92,7 +92,7 @@ export default function ContactForm() {
           <Box p="2em 0.7em" w="100%">
             <Flex justifyContent="space-evenly">
               <Button colorScheme="facebook" variant="solid" type="submit">
-                Continuar
+                Enviar
               </Button>
             </Flex>
           </Box>
@@ -106,5 +106,5 @@ const StyledContact = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  padding: 2em 0;
 `;

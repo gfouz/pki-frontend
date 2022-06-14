@@ -111,7 +111,7 @@ const StyledHome = styled.div`
     img {
     margin: 0 2em;  
     opacity: 0;  
-    animation: title;
+    animation: logo;
     animation-delay: 0.2s;
     animation-duration: 1s;
     animation-direction: normal;
@@ -133,13 +133,15 @@ const StyledHome = styled.div`
   }
 footer {
   width: 100%;
-  padding: 1.5em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em;
   color: #f8f8f8;
-  text-align: center;
   background-color: #444444;
 }
   
-@keyframes title {
+@keyframes logo {
   from {
    opacity: 0; 
    transform: translateY(20px);
@@ -152,11 +154,11 @@ footer {
 @keyframes pki {
   from {
    opacity: 0; 
-   transform: translateY(-100px);
+   transform: rotateY(180deg);
   }
   to {
    opacity: 1; 
-   transform: translateY(0);
+   transform: rotateY(0);
   }
 }
 `;

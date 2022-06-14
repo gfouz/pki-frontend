@@ -1,7 +1,6 @@
 import * as React from "react";
 import styled from 'styled-components';
 import Header from '../../components/header/Header'
-import Renewal from '../../patterns/Renewal'
 import ErrorMessage from '../../components/ErrorMessage'
 
 import {
@@ -36,9 +35,8 @@ export default function Request() {
         </header>
         <div className="container">
          <section>
-          <Renewal />
+            <ErrorMessage msg="errror" />
          </section>
-         <ErrorMessage msg="errror" />
         </div>
 
         <Drawer
