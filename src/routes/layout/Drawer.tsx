@@ -1,8 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import Header from "../../components/header/Header";
-import { drawerProps } from "../homepage/constant";
-
+import Header from '../../components/header/Header';
 import {
   Button,
   Heading,
@@ -22,6 +20,14 @@ interface IDrawer {
 
 export default function ChakraDrawer({ isOpen, onClose }: IDrawer) {
 
+  const footerProps: React.CSSProperties = {
+  height: "150px",
+  backgroundImage: `url('./images/aside.jpg')`,
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "70px",
+};
+
   return (
     <>
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
@@ -39,7 +45,7 @@ export default function ChakraDrawer({ isOpen, onClose }: IDrawer) {
             <Header color="#1a2253" column />
           </DrawerBody>
           <DrawerFooter></DrawerFooter>
-          <div style={{ ...drawerProps }}></div>
+           <div style={{ ...footerProps }}></div>
         </DrawerContent>
       </Drawer>
     </>

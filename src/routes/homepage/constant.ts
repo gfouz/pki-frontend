@@ -1,48 +1,35 @@
-type asideStyleProps = {
-height: string;  
-backgroundImage: string;
-backgroundPosition: string;
-backgroundRepeat: string;
-backgroundSize: string;
-}
+import * as React from "react";
 
-type MainTitleTypes = {
+interface ISubtitle {
   m: string;
   size: string;
   color: string;
   fontFamily: string;
 }
 
-type LogoTypes = {
+interface ILogo {
   margin: string;
   width: string;
   height: string;
 }
 
-export const drawerProps: asideStyleProps = {
-height: "150px", 
-backgroundImage: `url('./images/aside.jpg')`,
-backgroundPosition: "center",
-backgroundRepeat: "no-repeat",
-backgroundSize: "70px"
-}
+export const subtitleProps: ISubtitle = {
+  size: "sm",
+  m: "0.5em 0",
+  color: "#666666",
+  fontFamily: "calibri",
+};
 
-export const mainTitleProps: MainTitleTypes = {
- size:"sm",
- m:"0.3em 0", 
- color:"#dc143c",
- fontFamily: "calibri",
-}
-
-export const subTitleProps: MainTitleTypes = {
- size:"sm",
- m:"0.5em 0", 
- color:"#666666",
- fontFamily: "calibri"
-}
-
-export const logoProps: LogoTypes = {
+export const logoProps: ILogo = {
   width: "150px",
   height: "auto",
-  margin: "0 3.5em"
-}
+  margin: "0 3.5em",
+};
+
+export const drawerProps: React.CSSProperties = {
+  height: "150px",
+  backgroundImage: `url('./images/aside.jpg')`,
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "70px",
+};

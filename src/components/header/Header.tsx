@@ -39,10 +39,19 @@ function Header(props: HeaderProps) {
       path: "/descargas",
       icon: <GitAlt />,
     },
+    {
+      path: "/renovacion",
+      icon: <GitAlt />,
+    },
+    {
+      path: "/revocacion",
+      icon: <GitAlt />,
+    },
   ];
 
   const router = useLocation();
   const { pathname } = router;
+  // Do not forget to distiguish color for current pathname.
   //const currentlinks = links.filter((link) => link !== pathname);
 
   return (

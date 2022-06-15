@@ -1,46 +1,16 @@
-type asideStyleProps = {
-height: string;  
-backgroundImage: string;
-backgroundPosition: string;
-backgroundRepeat: string;
-backgroundSize: string;
-}
+import * as React from "react";
 
-type MainTitleTypes = {
-  m: string;
-  size: string;
-  color: string;
-  fontFamily: string;
-}
+export const titleProps: React.CSSProperties = {
+  color: "#dc143c",
+  fontFamily: "calibri",
+};
 
-type LogoTypes = {
-  width: string;
-  height: string;
-}
+export const subTitleProps: React.CSSProperties = {
+  color: "#666666",
+  fontFamily: "calibri",
+};
 
-export const drawerProps: asideStyleProps = {
-height: "150px", 
-backgroundImage: `url('./images/aside.jpg')`,
-backgroundPosition: "center",
-backgroundRepeat: "no-repeat",
-backgroundSize: "70px"
-}
-
-export const mainTitleProps: MainTitleTypes = {
- size:"sm",
- m:"0.3em 0", 
- color:"#dc143c",
- fontFamily: "calibri",
-}
-
-export const subTitleProps: MainTitleTypes = {
- size:"sm",
- m:"0.5em 0", 
- color:"#666666",
- fontFamily: "calibri"
-}
-
-export const logoProps: LogoTypes = {
+export const logoProps: React.CSSProperties = {
   width: "250px",
-  height: "auto"
-}
+  height: "auto",
+};
