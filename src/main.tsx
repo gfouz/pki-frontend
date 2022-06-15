@@ -22,7 +22,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Suspense fallback={<Card />}>
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/registro" element={<Login />} />
+            <Route path="/generacion" element={<Login />} />
             <Route path="/consultas" element={<Request />} />
             <Route path="/servicios" element={<Services />} />
             <Route path="/contacto" element={<Contacts />} />

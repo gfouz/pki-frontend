@@ -5,16 +5,14 @@ import Register from "../../patterns/Register";
 
 function Login() {
   return (
-    <Layout>
+    <Layout headerbg="#001b36" footerbg="#001b36">
       <StyledResgister>
         <section className="login">
           <div className="login__divider">
             <div className="login__logo">
-              <img src="./images/segurmatica.jpg" />
-              <p>PKI Servicio de llave pública.</p>
-              <p>Formulario de solicitud.</p>
+              
             </div>
-            <img className="login__image" src="./images/generate.jpg" />
+            <img className="login__image" src="./images/robot2.jpg" />
           </div>
           <div className="login__divider">
             <Register />
@@ -43,10 +41,14 @@ const StyledResgister = styled.div`
     justify-content: center;
   }
   .login__logo {
+    width: 300px;
+    border-radius: 10px;
+    background-color:#00000099;
     position: absolute;
     top: 50%;
     left: 50%;
-    color: #888888;
+    color: #ffffff;
+    font-size: 1.7em;
     font-weight: bolder;
     font-family: calibri;
     text-align: center;
@@ -57,3 +59,6 @@ const StyledResgister = styled.div`
     height: auto;
   }
 `;
+
+//<p>PKI Servicio de llave pública.</p>
+//<p>Formulario de solicitud.</p>

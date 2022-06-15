@@ -26,21 +26,28 @@ export const StyledHeader = styled.div`
     }
     &__item {
        display: flex;
-       padding: 0.4em;
+       padding: 0.5em;
     }
     &__item:hover {
-      color: blue;
+      color: violet;
     }
   .nav__icon {
     position: relative;
-    top: 5px;
-    margin: 0 2em 0 0;
+    top: 2px;
+    margin: 0 1.8em 0 0;
   }
-  &__link {
+  .nav__link {
       color:#999999;
       font-weight: bolder;
+      font-size: 0.8em;
+      text-transform: uppercase;
     }
+  .nav__link--bolder {
+      color: #DC143C;
+      
+    }  
   }
+
   .hidden {
     display: none;
   }

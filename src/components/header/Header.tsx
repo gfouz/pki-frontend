@@ -20,10 +20,6 @@ function Header(props: HeaderProps) {
       icon: <Home />,
     },
     {
-      path: "/registro",
-      icon: <SpyGlass />,
-    },
-    {
       path: "/servicios",
       icon: <Telegram />,
     },
@@ -40,6 +36,10 @@ function Header(props: HeaderProps) {
       icon: <GitAlt />,
     },
     {
+      path: "/generacion",
+      icon: <SpyGlass />,
+    },
+    {
       path: "/renovacion",
       icon: <GitAlt />,
     },
@@ -51,9 +51,7 @@ function Header(props: HeaderProps) {
 
   const router = useLocation();
   const { pathname } = router;
-  // Do not forget to distiguish color for current pathname.
-  //const currentlinks = links.filter((link) => link !== pathname);
-
+ 
   return (
     <>
       <StyledHeader {...props}>
@@ -62,7 +60,7 @@ function Header(props: HeaderProps) {
             <Link to={`${item.path}`} key={React.useId()}>
               <div className="nav__item">
                 <div className="nav__icon">{item.icon}</div>
-                <div className="nav__link">
+                <div className={item.path === pathname ? "nav__link nav__link--bolder" : "nav__link"}>
                   {item.path === "/" ? "inicio" : item.path.slice(1)}
                 </div>
               </div>
@@ -75,5 +73,3 @@ function Header(props: HeaderProps) {
 }
 export default Header;
 
-//React.ElementType<React.ComponentPropsWithRef<'svg'>>
-//SVGProps<SVGElement>
