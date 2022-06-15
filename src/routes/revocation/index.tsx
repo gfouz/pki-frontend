@@ -9,10 +9,7 @@ function Revocation() {
     <Layout>
        <StyledResgister>
         <section className="login">
-          <div className="login__divider">
-            <div className="login__logo">
-              
-            </div>
+          <div className="login__divider bg-grey">
             <img className="login__image" src="./images/robot2.jpg" />
           </div>
           <div className="login__divider">
@@ -41,6 +38,7 @@ const StyledResgister = styled.div`
     position: relative;
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
   }
   .login__logo {
@@ -60,6 +58,9 @@ const StyledResgister = styled.div`
   .login__image {
     max-width: 100%;
     height: auto;
-    object-fit: cover;
+  
   }
+ .bg-grey  {
+  background-color: #3a3839;
+ }
 `;
