@@ -1,7 +1,7 @@
 {
-  "name": "react-eighteen",
+  "name": "pki-frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "homepage": "https://gfouz.github.io/pki-frontend",
   "scripts": {
     "dev": "vite",
@@ -10,6 +10,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
+  "author":"Giovani and Gilberto",
+  "license": "ISC",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.1",
     "@chakra-ui/react": "^2.1.2",

@@ -1,21 +1,15 @@
-import { createElement } from "react";
+import * as React from "react";
 
- interface Props {
- size?: string
-  color?: string
-  height?: string
-}
-
-export function Home(props: Props) {
-  return createElement(
+export function Home(props: React.SVGProps<SVGSVGElement>) {
+  return React.createElement(
     "svg",
     {
       viewBox: "0 0 576 512",
-      width: props.size || "1em",
+      width: props.width || "1em",
       length: props.height || "auto",
       ...props,
     },
-    createElement("path", {
+    React.createElement("path", {
       fill: props.color || "#666666",
       fillRule: "evenodd",
       d:

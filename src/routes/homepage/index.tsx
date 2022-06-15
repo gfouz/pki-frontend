@@ -2,40 +2,15 @@ import * as React from "react";
 import styled from 'styled-components';
 import Header from '../../components/header/Header';
 import HorizonLine from '../../components/HorizonLine';
-import {drawerProps, mainTitleProps, subTitleProps, logoProps} from './constant';
-
-
-import {
-  Button,
-  Heading,
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  useDisclosure,
-  DrawerCloseButton,
-} from '@chakra-ui/react'
+import Layout from '../layout/Layout'
+import { subTitleProps, logoProps} from './constant';
+import { Heading } from '@chakra-ui/react'
 
 export default function Homepage() {
 
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef: React.LegacyRef<HTMLButtonElement> = React.useRef(null)
-
   return (
-    <>
+    <Layout>
       <StyledHome>
-
-        <header>
-          <Button
-            m="1em"
-            ref={btnRef}
-            variant='ghost'
-            onClick={onOpen}>
-            <strong style={{ color: "#ffffff" }}>{isOpen ? "CERRAR" : "ABRIR"}</strong>
-          </Button>
-        </header>
         <section>
              <article>
               <img 
@@ -51,54 +26,21 @@ export default function Homepage() {
               <img src="./images/robot.jpg" alt="robot" />
              
         </section>
-        <footer>
-           <Heading  size='sm'>Segurmática &copy; {new Date().getFullYear()}</Heading>
-        </footer>
-        <Drawer
-          isOpen={isOpen}
-          placement='left'
-          onClose={onClose}
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader>
-               <img 
-                 style={{width:"120px"}}
-                 src="./images/segurmatica.jpg" 
-                 alt="Segurmática" />
-            </DrawerHeader>
-            <DrawerBody >
-              <Header color="#1a2253" column />
-            </DrawerBody>
-            <DrawerFooter>
-            </DrawerFooter>
-              <div style={{...drawerProps}}></div>
-          </DrawerContent>
-        </Drawer>
       </StyledHome>
-    </>
+    </Layout>
   )
 }
 
 const StyledHome = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: space-between;
   width: 100%;
-  min-height: 100vh;
-  header {
-    background-color:#444444;
-    width: 100%;
-  }
+ 
   section {
+   width: 100%; 
    display: flex;
    flex-direction: column;
    justify-content: center; 
    align-items: center;
-   width: 100%;
-   min-height: 100%;
+
    img {
      max-width: 100%;
      height: auto;
@@ -131,15 +73,6 @@ const StyledHome = styled.div`
     }
   }
   }
-footer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5em;
-  color: #f8f8f8;
-  background-color: #444444;
-}
   
 @keyframes logo {
   from {

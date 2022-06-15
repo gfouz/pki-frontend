@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/registro" element={<Login />} />
             <Route path="/consultas" element={<Request />} />
             <Route path="/servicios" element={<Services />} />
-            <Route path="/contactos" element={<Contacts />} />
+            <Route path="/contacto" element={<Contacts />} />
             <Route path="/descargas" element={<Downloads />} />
           </Routes>
         </Suspense>

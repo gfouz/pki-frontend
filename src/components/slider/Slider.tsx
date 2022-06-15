@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function Glider() {
   
-  interface settingsProps {
+  interface ISettings {
     dots: boolean;
     infinite: boolean;
     speed: number;
@@ -19,7 +19,7 @@ export default function Glider() {
     slidesToShow: number;
     slidesToScroll: number;
   }
-  var settings: settingsProps = {
+  var settings: ISettings = {
     dots: true,
     infinite: true,
     speed: 500,

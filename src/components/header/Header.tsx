@@ -10,33 +10,33 @@ import GitAlt from "../../icons/GitAlt";
 
 function Header(props: HeaderProps) {
   interface IRouterPath {
-    link: string;
-    icon: any;
+    path: string;
+    icon: React.ReactNode;
   }
 
-  const elements: IRouterPath[] = [
+  const routes: IRouterPath[] = [
     {
-      link: "/",
+      path: "/",
       icon: <Home />,
     },
     {
-      link: "/registro",
+      path: "/registro",
       icon: <SpyGlass />,
     },
     {
-      link: "/servicios",
+      path: "/servicios",
       icon: <Telegram />,
     },
     {
-      link: "/contactos",
+      path: "/contacto",
       icon: <Whatsapp />,
     },
     {
-      link: "/consultas",
+      path: "/consultas",
       icon: <Envelope />,
     },
     {
-      link: "/descargas",
+      path: "/descargas",
       icon: <GitAlt />,
     },
   ];
@@ -49,13 +49,12 @@ function Header(props: HeaderProps) {
     <>
       <StyledHeader {...props}>
         <div className="nav">
-          {elements.map((item) => (
-            <Link to={`${item.link}`}>
+          {routes.map((item) => (
+            <Link to={`${item.path}`} key={React.useId()}>
               <div className="nav__item">
-                <div className="nav__icon"> {item.icon}</div>
+                <div className="nav__icon">{item.icon}</div>
                 <div className="nav__link">
-                  {" "}
-                  {item.link === "/" ? "inicio" : item.link.slice(1)}
+                  {item.path === "/" ? "inicio" : item.path.slice(1)}
                 </div>
               </div>
             </Link>
@@ -66,3 +65,6 @@ function Header(props: HeaderProps) {
   );
 }
 export default Header;
+
+//React.ElementType<React.ComponentPropsWithRef<'svg'>>
+//SVGProps<SVGElement>

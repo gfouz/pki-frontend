@@ -3,13 +3,10 @@ import styled from 'styled-components';
 
 export const StyledSlider = styled.div`
   width: 100%;
-  
-  .glider {
-
-  }
+  height: 100%;
+  margin: 0 0 2em 0;
   .glider__item {
      position: relative;
-
      display: flex;
      justify-content: center;
 

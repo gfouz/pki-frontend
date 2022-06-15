@@ -34,7 +34,7 @@ export default function ContactForm() {
      <StyledContact>
        <form onSubmit={handleSubmit(onSubmit)}>
           <Center w="100%" p="1.5em">
-            <Heading as="h3" size="lg" color="#810606">CONTACTO</Heading>
+            <Heading as="h3" size="lg" color="#385898">CONTACTO</Heading>
           </Center>
           <HStack spacing={2} p="0.7em">
             <Container textAlign="left">

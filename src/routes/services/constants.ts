@@ -1,31 +1,15 @@
-type SidebarTypes = {
-width: string;
-height: string;
-backgroundImage: string;
-backgroundPosition: string;
-backgroundRepeat: string;
-backgroundSize: string;
-}
+import React from "react";
 
-type ToggleButtonTypes = {
-  color: string;
-}
+export const titleProps: React.CSSProperties = {
+  color: "#666666",
+  margin: "2em 0",
+  fontSize: "1.3em",
+  whiteSpace: "nowrap",
+  textTransform: "uppercase",
+};
 
-export const footerProps: SidebarTypes = {
-width: "100%",  
-height: "150px", 
-backgroundImage: `url('./images/aside.jpg')`,
-backgroundPosition: "center",
-backgroundRepeat: "no-repeat",
-backgroundSize: "70px"
-}
-
-export const toggleButton: ToggleButtonTypes = {
-	color: "#cccccc",
-}
-
-export const serviceAbout:()=>string  = ()=> {
-	return `
+export const serviceAbout: () => string = () => {
+  return `
   La empresa Segurmática brinda servicios 
   de emisión de certificados digitales para 
   firma digital de mensajería y ficheros 
@@ -39,5 +23,5 @@ export const serviceAbout:()=>string  = ()=> {
   segura y precisa, además, protege la integridad 
   y la confidencialidad de la información. 
 
-	`
-}
+	`;
+};
