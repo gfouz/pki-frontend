@@ -5,7 +5,7 @@ import Register from "../../patterns/Register";
 
 function Login() {
   return (
-    <Layout headerbg="#001b36" footerbg="#001b36">
+    <Layout>
       <StyledResgister>
         <section className="login">
           <div className="login__divider">
@@ -57,6 +57,7 @@ const StyledResgister = styled.div`
   .login__image {
     max-width: 100%;
     height: auto;
+    object-fit: cover;
   }
 `;
 
