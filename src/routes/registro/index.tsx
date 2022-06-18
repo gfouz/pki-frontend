@@ -57,7 +57,6 @@ const StyledResgister = styled.div`
   .login__image {
     max-width: 100%;
     height: auto;
-    object-fit: cover;
   }
 `;
 
