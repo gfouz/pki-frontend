@@ -22,18 +22,18 @@ function Contacts() {
                     Email: soporte@segurmatica.cu
                   </p>
                </a> 
-                <a href="+5378703536">
+                <a href="tel: +5378703536">
                    <p className="contact__text">
                     Tel: Comercial: 78703536 ext 133 y 134 .
                   </p>
                 </a>
-                <a href="+5378703536">
+                <a href="tel: +5378703536">
                    <p className="contact__text">
                    Tel: Soporte Técnico: +78703536 ext 135 y 136 .
                   </p>
                 </a>
               </section>
-              <img src="./images/contactos.png"  />
+              <img src="./images/contact.png" alt="contact" />
           </article>
           <article className="contact__divider">
             <ContactForm />
@@ -72,11 +72,13 @@ const StyledContact = styled.div`
    }
    .contact__information {
     position: absolute;
-    top: 65%;
-    left: 10%;
-    color: #cccccc;
-    max-width: 270px;
+    top: 57%;
+    margin: 0 auto;
+    color: #555555;
+    max-width: 320px;
     text-align: left;
-    font-size: 14px;
+    font-size: 0.9em;
+    font-weight: bolder;
    }
 `;
+//0099FF
