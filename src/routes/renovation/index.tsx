@@ -39,6 +39,7 @@ const StyledResgister = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   .login__logo {
     width: 300px;
