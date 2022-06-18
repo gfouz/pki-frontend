@@ -10,7 +10,7 @@ function Revocation() {
        <StyledResgister>
         <section className="login">
           <div className="login__divider bg-grey">
-            <img className="login__image" src="./images/robot2.jpg" />
+            <img className="login__image" src="./images/forms.png" />
           </div>
           <div className="login__divider">
             <Form/>
@@ -64,3 +64,5 @@ const StyledResgister = styled.div`
   background-color: #3a3839;
  }
 `;
+
+//git clone https://github.com/gfouz/pki-frontend.git

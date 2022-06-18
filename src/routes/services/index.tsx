@@ -24,7 +24,7 @@ display: flex;
 flex-direction: column;
 justify-content:center;
 align-items: center;
-background-image: url('./images/xx.jpg');
+background-image: url('./images/services.jpg');
 background-position: top;
 background-size: cover;
 background-repeat: no-repeat;

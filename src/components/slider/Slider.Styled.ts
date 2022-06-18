@@ -16,13 +16,17 @@ export const StyledSlider = styled.div`
   .glider-image__box {
     position: relative;
     padding: 10px;
-    max-width:500px;
+    max-width:800px;
     background-color: #44444499;   
   }  
   .glider__text {
+    color: #f1f1f1;
     padding: 1em;
     font-family: calibri;
-    color: #f1f1f1;
+    font-size: 1.3em;
+    @media (max-width: 420px) {
+      font-size: 1em;
+    }
   }    
     .slick-dots li button:before {
     font-family: 'slick';
