@@ -9,9 +9,6 @@ function Login() {
       <StyledResgister>
         <section className="login">
           <div className="login__divider">
-            <div className="login__logo">
-              
-            </div>
             <img className="login__image" src="./images/forms.png" />
           </div>
           <div className="login__divider">
